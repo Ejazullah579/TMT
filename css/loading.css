@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+}
+.loading_screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    z-index: 999999;
+}
+.loading_screen svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate{
+    0%,100%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loading_screen svg circle{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke: #00a1ff;
+    transform: translate(5px,5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%,100%{
+        stroke-dashoffset: 440;
+    }
+    50%{
+        stroke-dashoffset: 0;
+    }
+    50.1%{
+        stroke-dashoffset: 880;
+    }
+}
+#samo{
+    font-family: 'ethno';
+    color: white;
+    position: absolute;
+    margin: auto;
+    font-size: 15px;
+}

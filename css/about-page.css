@@ -1,0 +1,159 @@
+
+#about-text{
+    display: inline;
+    font-family: 'ethno';
+    font-size: 80px;
+}
+#sub-para{
+    font-family: 'century';
+    font-weight: 200;
+    line-height: 1.5;
+    text-align: justify;
+    margin: auto;
+    font-size: 23px;
+}
+.wrapper{
+    border-radius: 50px;
+    border-bottom:5px solid rgba(255, 255, 255 , 0.7);
+    padding: 20px 0px;
+}
+section.beating-heart{
+    position: relative;
+    text-align: center;
+    height:80vh;
+    padding: 0 10px;
+    padding-bottom: 100px;   
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+.about-developers{
+    text-align: center;
+}
+#about-sub-title{
+    color: orange;
+    font-family: 'ethno';
+    font-size: 30px;
+}
+#about-sub-title::after{
+    color: white;
+}
+section.beating-heart h2{
+    margin-bottom: 30px;
+}
+section.beating-heart span{
+    font-size: 100px;
+    line-height: 105px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.heart{
+    fill: red ;
+    position: relative;
+    width: 150px;
+    margin: 0 50px;
+    margin-top: -50px;
+    animation: pulse 1s infinite;
+}
+@keyframes pulse{
+    0%{  
+        transform: scale(1);
+    }
+    15%{
+        transform: scale(1.25);
+        opacity:0.7;
+    }
+    25%{
+        transform: scale(1.15);
+    }
+    35%{
+        transform: scale(1.25);
+        opacity:0.7;
+    }
+    
+    100%{
+        transform: scale(1);
+    }
+}
+/* Developer section */
+.img-wrapper{
+    margin: 0;
+    padding: 0px 15px;
+    display: inline-block;
+    
+}
+.s-wrapper{
+    padding: 0px 50px;
+    padding-top: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+.ss-wrapper{
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 120px;
+}
+.wp1,.wp2,.wp3{
+  padding:15px;
+  padding-bottom: 30px;
+}
+
+
+.wp2:hover~.wp1 img{
+    margin-right:0px;
+}
+.details{
+    position: relative;
+    display: none;
+    margin-top: 10px;
+    transition:0.8s ease-in-out;
+}
+.pic_name{
+    color: orange;
+    font-weight: 800;
+}
+.pic{
+    border-radius: 110px;
+    transition: 0.3s ease-in-out;
+}
+.pic:hover{
+    animation: glew 1s linear infinite;
+    position: relative;
+    padding: 10px;
+}
+/* .pic1:hover,.pic3:hover{
+   
+} */
+.details:hover{
+    margin-top: 0;
+}
+.wp3 .details{
+    padding-left: 17px;
+}
+.wp1 .details{
+    padding-left: 20px;
+}
+.wp2 .details{
+    padding-left: 10px;
+}
+.wp1:hover .details,.wp2:hover .details,.wp3:hover .details{
+    transition:0.8s ease-in-out;
+    position: absolute;
+    display: block;
+}
+.pic2{
+    animation: glew 2s linear infinite;
+}
+@keyframes glew{
+    0%{
+   
+    }
+    50%{
+        box-shadow: 0 0 20px 8px #03e9f4;
+    }
+    100%{
+        
+    }
+}

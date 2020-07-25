@@ -1,0 +1,37 @@
+body{
+    background: #031321;
+    margin: 0;
+}
+/* #li-img:nth-child(36){
+ margin-left: 14.9%;
+} */
+#list-itemm{
+    display: inline-block;
+    position: relative;
+    background: none;
+}
+#list-itemmm:hover{
+    background: none !important;
+ }
+#li-img{
+    border-radius: 8px;
+    margin:3px;
+}
+#li-img:hover{
+    background-color: black;
+    zoom: 1.08;
+    margin-left: -1px;
+    margin-top:-5px;
+    margin-right:-0.7px;
+    margin-bottom:-5px;
+    border: 3px solid orange;
+    transform: scale(1.1);
+}
+
+.btns{
+    padding-top:0;
+    position: relative;
+    margin: auto;
+    margin-top: -100px;
+    display:flex;    
+}

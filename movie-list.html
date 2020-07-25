@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Movie List Info</title>
+  <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/Movie.css">
+  <link rel="stylesheet" href="css/search-box.css">
+  <link rel="stylesheet" href="css/main.css" class="css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- -------Loading screen------- -->
+  <div class="loading_screen">
+    <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+    </svg>
+    <h1 id="samo">Loading...</h1>
+  </div>
+  <!-- -------Loading screen end------- -->
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark nav-wraper ">
+      <div class="logo">
+        <a href="index.htm">
+          <img src="images/sitelogo.png" alt="" class="logo navbar-brand" id="logo">
+        </a>
+      </div>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu">
+        <span style="z-index: 1000;color:white;" class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="navbar-nav menu m-xs-auto ml-auto">
+        <li class="nav-item listt"><a id="n1" href="index.htm">Home</a></li>
+        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movies</a>
+          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="">
+            <li onclick="movielistSelected('movie',28)" id="Action" class=" movie-item"><a>Action</a></li>
+            <li onclick="movielistSelected('movie',35)" id="Comedy" class=" movie-item"><a>Comedy</a></li>
+            <li onclick="movielistSelected('movie',16)" id="Animation" class=" movie-item"><a>Animation</a></li>
+            <li onclick="movielistSelected('movie',14)" id="Fantasy" class=" movie-item"><a>Fantasy</a></li>
+            <li onclick="movielistSelected('movie',12)" id="Adventure" class=" movie-item"><a>Adventure</a></li>
+          </ul>
+        </div>
+        </li>
+        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="n1" href="#">Tv Shows</a>
+          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="">
+            <li onclick="sessionStorage.setItem('show_type','top_rated'),movielistSelected('tv',28)" id="Action" class="movie-item"><a>Top Rated</a></li>
+            <li onclick="sessionStorage.setItem('show_type','on_the_air',movielistSelected('tv',35))" id="Comedy" class="movie-item"><a>On Air Shows</a></li>
+          </ul>
+        </div>
+        </li>
+        <li class="nav-item listt"><a id="n1" href="#">News</a></li>
+        <li class="nav-item listt"><a id="n1" href="about_us.html">About</a></li>
+        <li class="nav-item">
+          <form id="searchForm">
+            <div class="search-box">
+
+              <input autocomplete="off" id="searchText" class="search-text" type="text" placeholder="Type to Search">
+              <a href="#" class="search-btn">
+                <i onclick="getMovies($('#searchText').val())" class="fas fa-search"></i>
+              </a>
+              <ul id="result"></ul>
+            </div>
+          </form>
+        </li>
+
+      </ul>
+    </div>
+    </nav>
+    <div class="menu-trigger js-menu-trigger"></div>
+  </header>
+<!------------- navigation end --------------->
+  <div class="container">
+    <div id="movies" class="well">
+      <div style="padding-bottom:50px;padding-top:30px" class="row">
+        <div class="col-md-4 s4">
+          <div class="swiper-container s3">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide m-slide"><img onclick="movieSelected(431693,'movie')" width="300" height="auto" src="images/cube1.jpg"></img></div>
+                <div class="swiper-slide m-slide"><img onclick="movieSelected(72545,'movie')" width="300" height="auto" src="images/cube2.jpg"></img></div>
+                <div class="swiper-slide m-slide"><img onclick="movieSelected(299534,'movie')" width="300" height="auto" src="images/cube3.jpg"></img></div>
+                <div class="swiper-slide m-slide"><img onclick="movieSelected(420817,'movie')" width="300" height="auto" src="images/cube4.jpg"></img></div>
+                <div class="swiper-slide m-slide"><img onclick="movieSelected(512200,'movie')" width="300" height="auto" src="images/cube5.jpg"></img></div>
+              </div>  
+            <div id="pagination" class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div id="movie-container" class="col-md-8">
+          <h2 onclick="movielistSelected(28)" id="M-heading">Action</h2>
+          <ul class="list-group ul-main">
+            
+            <li id="action" class="">
+              <div class="swiper-container s1">
+                <div id="movie-list-action" class="swiper-wrapper"></div>
+              </div>
+            </li>
+
+            <h2 onclick="movielistSelected(35)" id="c-heading">Comedy</h2>
+            <li id="comedy" class="">
+              <div class="swiper-container s1">
+                <div id="movie-list-comedy" class="swiper-wrapper"></div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <h2 onclick="movielistSelected(16)" class="c-down" id="c-heading">Animation</h2>
+        <div class="containers">
+          <div class="swiper-container s2">
+            <div id="movie-list-animation" class="swiper-wrapper"></div>
+          </div>
+        </div>
+
+        <h2 onclick="movielistSelected(14)" class="c-down" id="c-heading">Fantasy</h2>
+        <div class="containers">
+          <div class="swiper-container s2">
+            <div id="movie-list-fantasy" class="swiper-wrapper"></div>
+          </div>
+        </div>
+        <h2 onclick="movielistSelected(12)" class="c-down" id="c-heading">Adventure</h2>
+        <div class="containers">
+          <div class="swiper-container s2">
+            <div id="movie-list-adventure" class="swiper-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(function(){
+     $('.loading_screen').css("display","none");
+   }, 4000)
+ </script>
+  <script src="scripts/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="scripts/movie-api.js"></script>
+  <script src="scripts/movie-list.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    
+  </script>
+  <!-- Initialize Swiper -->
+  <script>
+
+  </script>
+  <script>
+   
+    swiper_update3();
+    getMovieslist(28);
+    getMovieslist(35);
+    swiper_update();
+    getMovieslist(16);
+    getMovieslist(14);
+    getMovieslist(12);
+    swiper_update2();
+    swiper_update3();
+    
+    $('.swiper-container').css("height","200");
+    setTimeout(function(){
+      $('.swiper-container').css("height","inherit");
+    }, 3000)
+
+
+    function swiper_update() {
+      var swiper = new Swiper('.s1', {
+        observeParents: true,
+        observer: true,
+        slidesPerView: 5,
+        spaceBetween: 8,
+        loopedslides: 5,
+        freeMode: true,
+        updateOnWindowResize:true,
+        loop: true,
+        autoHeight: true,
+        mousewheel: true,
+      });
+       
+    }
+    function swiper_update2() {
+      var swiiper = new Swiper('.s2', {
+        observeParents: true,
+        observer: true,
+        slidesPerView: 6,
+        spaceBetween: 8,
+        freeMode: true,
+        autoHeight: true,
+        mousewheel: true,
+      });
+    }
+    function swiper_update3() {
+      var swiper = new Swiper('.s3', {
+        effect:'cube',
+        observeParents: true,
+        observer: true,
+        freeMode: true,
+        freeModeSticky:true,
+        freeModeMomentumBounceRatio:5,
+        slidesPerView: 5,
+        spaceBetween: 8,
+        loop: true,
+        autoHeight: true,
+        autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+        pagination: {
+        el: '.swiper-pagination',
+      },
+      });
+    }
+    
+  </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
