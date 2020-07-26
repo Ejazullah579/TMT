@@ -1,0 +1,26 @@
+{
+  "name": "tmt",
+  "version": "1.0.0",
+  "description": "movie website",
+  "main": "/scripts/main.js",
+  "scripts": {
+    "server": "nodemon scripts/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ejazullah579/TMT.git"
+  },
+  "author": "Ejazullah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ejazullah579/TMT/issues"
+  },
+  "homepage": "https://github.com/Ejazullah579/TMT#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
