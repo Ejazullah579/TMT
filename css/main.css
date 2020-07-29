@@ -241,6 +241,12 @@ nav ul li:hover #n1{
     top: 30px;
     font-weight: 700;
 }
+.login_btn{
+    margin-top: -5px;
+    padding:7px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+}
 /* Parallar styling */
 .cover-main{
     /* background:linear-gradient(rgba(0, 0,0, 0.5),rgba(0, 0,0, 0.5)), url("../images/cover.jpg"), right bottom; */

@@ -1,0 +1,100 @@
+.m-container{
+    margin-top: 650px;
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed;    
+    padding-left: 20% !important;
+    padding-right:20% !important;
+    padding-top: 5%;
+    backdrop-filter: blur(15px);
+    background: none !important;
+    z-index: 999999;
+    transition: transit 1s linear;
+}
+.s-container{
+    background: #0F1A21;
+    border-radius: 20px;
+    padding:20px;
+    padding-right:30px !important;
+    padding-bottom:50px !important;
+}
+.colum2{
+    padding: 15px !important;
+    padding-right: 50px !important;
+}
+.form_title{
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    font-weight: 600;
+    font-size: 30px;
+}
+/* #contact-form{
+    
+} */
+input:focus,textarea:focus{
+    box-shadow: 0 0 5px #03e9f4,
+            0 0 10px #03e9f4,
+            0 0 10px #03e9f4,
+            0 0 10px #03e9f4 !important;
+}
+.s-btn{
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    border: 2px solid orange !important;
+    transition: 0.3s ease-in-out;
+}
+@keyframes blink{
+    0%{
+        background: orange; 
+    }
+    50%{
+        background: none;
+    }
+    100%{
+        background: orange; 
+    }
+}
+.fl_info input{
+    margin: 0 10px !important;
+}
+.col11{
+    margin-right: 10px !important;
+}
+.sel_pic{
+    margin-left: 55px !important;
+    margin-top: 30px !important;
+    background: url(demo.png) no-repeat;
+}
+.select_img{
+    padding-top: 80%;
+    padding-left: 50px;
+    margin-left:-20px !important;
+    padding-right:0px !important;
+}
+.s-btn:not(:hover){
+    transition: 0.3s ease-in-out;
+    border: none;
+    background: orange;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.s-btn:hover{
+    transition: 0.3s ease-in-out;
+    
+    color: white;
+    animation: blink 1s linear infinite;
+}
+.s-container input{
+    margin: 10px;
+}
+.sign_up{
+    float: right;
+    text-decoration: none !important;
+    font-size: 14px;
+    background: none;
+    color:dodgerblue;
+    font-weight: 700;
+}

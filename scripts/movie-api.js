@@ -1,5 +1,6 @@
 
 $(document).ready(() => {
+
   stickyheader();
   $('#searchForm').keyup((e) => {
     let searchText = $('#searchText').val();
@@ -7,6 +8,7 @@ $(document).ready(() => {
     e.preventDefault();
   });
 });
+
 
 function getMovies(searchText) {
   axios.get('https://api.themoviedb.org/3/search/movie?api_key=4b21e1dd08c122c8a4f1a23a8630f217&language=en-US&query='+ searchText+'&page=1&include_adult=false')

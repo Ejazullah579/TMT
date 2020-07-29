@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/main.css" class="css">
   <link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/signup.css">
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="css/main.css" class="css">
+  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="css/search-box.css">
@@ -20,13 +23,71 @@
 
 <body>
   <!-- -------Loading screen------- -->
-  <div class="loading_screen">
+  <!-- <div class="loading_screen">
     <svg>
       <circle cx="70" cy="70" r="70"></circle>
     </svg>
     <h1 id="samo">Loading...</h1>
-  </div>
+  </div> -->
   <!-- -------Loading screen end------- -->
+
+<!---------- Login Form ----------->
+  <div class="main-container" id="main-container">
+    <div class="container sub-container">
+      <div style="height: 20px;">
+        <i onclick="hideloginform()" class="fa fa-times c-icon"></i>
+      </div>
+        <form action="/" method="POST" class="" id="contact-form">
+            <div class="form_logo">
+                <img src="images/sitelogo.png" alt="NO image" class="form_logo_img">
+            </div>
+            <input class="form-control f-name" type="text" name="first-name" placeholder="First Name" autocomplete="off" required>
+            <input class="form-control l-name" type="text" name="last-name" placeholder="Last Name" autocomplete="off" required>
+            <input class="form-control s-btn" type="submit" value="Submit">
+        </form>
+        <button onclick="showsignupform()"  class="sign_up">Register Here!</button>
+    </div>
+    </div>
+    <!------------ Sign up Form --------->
+
+    <div class="m-container">
+      <div class="container s-container">
+        <div style="height: 20px;">
+          <i onclick="hidesignupform()" class="fa fa-times c-icon"></i>
+        </div>
+          <div class="row">
+              <div class="col-md-5 col-sm-3 sel_pic">
+                  <input class="form-control-file select_img" type="file" name="profile_pic" id="">
+              </div>
+              <div class="col colum2">
+                  <h2 class="form_title">
+                      Complete the Following Fields for Registration
+                  </h2>
+                  <form action="" method="POST" class="" id="contact-form">
+
+                      <div style="padding: 0;" class="row fl_info no-gutters">
+                          <div class="col col11">
+                              <input class="form-control first_name" type="text" name="first_name"
+                                  placeholder="First Name" required autocomplete="off">
+                          </div>
+                          <div class="col">
+                              <input class="form-control last_name" type="text" name="last_name"
+                                  placeholder="Last Name" required autocomplete="off">
+                          </div>
+                      </div>
+                      <input class="form-control email" type="text" name="email" placeholder="Email Address" required
+                          autocomplete="off">
+                      <input class="form-control user_name" type="text" name="user_name" placeholder="User Name"
+                          required autocomplete="off">
+                      <input class="form-control password_name" type="text" name="user_password"
+                          placeholder="Password" required autocomplete="off">
+                      <input class="form-control s-btn" type="submit" value="Submit" autocomplete="off">
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+   <!----------------End  ----------------->
 
   
     <header>
@@ -75,7 +136,9 @@
               </div>
             </form>
           </li>
-
+          <li class="nav-item">
+            <button class="s-btn login_btn">Log in</button>  
+          </li>
         </ul>
       </div>
       </nav>
@@ -163,25 +226,25 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script>
+    <script src="scripts/movie-genre.js"></script>
+    <script src="scripts/parallax.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="scripts/main.js"></script>
+   <script>
       setTimeout(function () {
         $('.loading_screen').css("display", "none");
       }, 1500)
     </script>
-    <script src="scripts/movie-genre.js"></script>
     <script>
       gettoplist('movie','now_playing');
       gettoplist('movie','top_rated');
       gettoplist('tv','top_rated');
     </script>
-    <script src="scripts/parallax.min.js"></script>
-    <script src="scripts/main.js"></script>
     <script>
       var scene = document.getElementById("scene");
       var parallax = new Parallax(scene);
     </script>
     <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>

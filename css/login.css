@@ -1,0 +1,106 @@
+.main-container{
+    margin-top: -800px;
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed; 
+    padding-left: 38% !important;
+    padding-right:38% !important;
+    padding-top: 7%;
+    backdrop-filter: blur(15px);
+    background: none !important;
+    z-index: 999999;
+    transition: transit 1s linear;
+    
+}
+@keyframes transit{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.c-icon{
+    position: relative;
+    border-radius: 10px;
+    float: right;
+}
+.dblock{
+    display: block;
+}
+.sub-container{
+    box-shadow: 0 0 10px 5px white;
+    background: #0F1A21;
+    border-radius: 20px;
+    padding:20px;
+    padding-right:30px !important;
+    padding-bottom:60px !important;
+    padding-top:30px !important;
+    transition: transit 1s linear;
+    transition: 1s ease-in-out;
+}
+/* #contact-form{
+    
+} */
+input:focus,textarea:focus{
+    box-shadow: 0 0 5px #03e9f4,
+            0 0 10px #03e9f4,
+            0 0 10px #03e9f4,
+            0 0 10px #03e9f4 !important;
+}
+.s-btn{
+    border-radius: 30px !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    border: 2px solid orange !important;
+    transition: 0.3s ease-in-out;
+}
+@keyframes blink{
+    0%{
+        background: orange; 
+    }
+    50%{
+        background: none;
+    }
+    100%{
+        background: orange; 
+    }
+}
+.s-btn:not(:hover){
+    transition: 0.3s ease-in-out;
+    border: none;
+    background: orange;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
+.s-btn:hover{
+    transition: 0.3s ease-in-out;
+    
+    color: white;
+    animation: blink 1s linear infinite;
+}
+.sub-container input{
+    margin: 10px;
+}
+.sign_up{
+    float: right;
+    text-decoration: none !important;
+    font-size: 14px;
+}
+.sign_up:hover{
+    transform: scale(1.1);
+    color: floralwhite;
+}
+.form_logo{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_logo img{
+    height: 130px;
+    width: auto; 
+    margin-bottom: 20px;
+    
+}

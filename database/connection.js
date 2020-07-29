@@ -5,11 +5,12 @@ const app =express();
 const bodyParser=require('body-parser');
 const { Router } = require('express');
 
-const uri = "mongodb+srv://Ejazullah579:ejazullah0000@tmt-website.waui8.mongodb.net/ejazkhan?retryWrites=true&w=majority";
+const uri = "mongodb+srv://ejazkhan:ejazullah0000@tmt-website.waui8.mongodb.net/ejazkhan?retryWrites=true&w=majority";
 const connectdb= async () =>{
     await mongoose.connect(uri, { 
         useUnifiedTopology:true,
-        useNewUrlParser: true });
+        useNewUrlParser: true
+     });
     console.log("Database Connected");
 }
 
