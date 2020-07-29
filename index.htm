@@ -37,12 +37,12 @@
       <div style="height: 20px;">
         <i onclick="hideloginform()" class="fa fa-times c-icon"></i>
       </div>
-        <form action="/" method="POST" class="" id="contact-form">
+        <form action="http://localhost:3000/get_info" method="POST" class="" id="contact-form">
             <div class="form_logo">
                 <img src="images/sitelogo.png" alt="NO image" class="form_logo_img">
             </div>
-            <input class="form-control f-name" type="text" name="first-name" placeholder="First Name" autocomplete="off" required>
-            <input class="form-control l-name" type="text" name="last-name" placeholder="Last Name" autocomplete="off" required>
+            <input class="form-control f-name" type="text" name="user_name" placeholder="User Name" autocomplete="off" required>
+            <input class="form-control l-name" type="text" name="user_password" placeholder="User Password" autocomplete="off" required>
             <input class="form-control s-btn" type="submit" value="Submit">
         </form>
         <button onclick="showsignupform()"  class="sign_up">Register Here!</button>
@@ -63,7 +63,7 @@
                   <h2 class="form_title">
                       Complete the Following Fields for Registration
                   </h2>
-                  <form action="" method="POST" class="" id="contact-form">
+                  <form action="C:/MAMP/htdocs/db.php" method="POST" class="" id="contact-form">
 
                       <div style="padding: 0;" class="row fl_info no-gutters">
                           <div class="col col11">
@@ -136,8 +136,9 @@
               </div>
             </form>
           </li>
-          <li class="nav-item">
-            <button class="s-btn login_btn">Log in</button>  
+          <li class="nav-item user_info">
+            <button class="s-btn login_btn">Log in</button>
+            <button class="s-btn2 login_btn">Log in</button>
           </li>
         </ul>
       </div>

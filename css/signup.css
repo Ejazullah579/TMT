@@ -65,7 +65,7 @@ input:focus,textarea:focus{
 .sel_pic{
     margin-left: 55px !important;
     margin-top: 30px !important;
-    background: url(demo.png) no-repeat;
+    background: url(../images/demo.png) no-repeat;
 }
 .select_img{
     padding-top: 80%;

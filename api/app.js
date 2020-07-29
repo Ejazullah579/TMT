@@ -2,14 +2,18 @@ const express=require('express');
 const morgan=require('morgan');
 const bodyParser=require('body-parser');
 const app=express();
+const fs=require('fs');
+let user_info=fs.readFileSync('variables.json');
+console.log(json.parse(user_info));
 const userRouter=require('./routes/route1');
+
 
 
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/users',userRouter);
+app.use('/',userRouter);
 
 //// Error handling
 

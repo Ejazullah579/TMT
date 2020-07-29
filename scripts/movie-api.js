@@ -1,6 +1,6 @@
 
-$(document).ready(() => {
 
+$(document).ready(() => {
   stickyheader();
   $('#searchForm').keyup((e) => {
     let searchText = $('#searchText').val();
