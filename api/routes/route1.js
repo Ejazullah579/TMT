@@ -1,19 +1,17 @@
 
 const express = require('express');
 const router = express.Router();
-const app=express();
 const User = require('../schemas/user');
-const bodyparser = require('body-parser');
-
-/////////////////  Setting Templating engine
-const ejs = require("ejs");
+const { json } = require('body-parser');
+const fs=require('fs');
+var user_info=JSON.parse(fs.readFileSync('E:/try/api/var.json'));
+var data;
 app.set('view engine', 'ejs');
-app.use(express.static("public"));
 
 
 
 router.get('/', function(req, res, next) {
-    res.render('/home.ejs')
+    res.sendFile('E:/try/'+'/index.htm')
   });
 
 
@@ -34,6 +32,7 @@ router.post('/get_info', async (req, res, next) => {
 
             res.status(200).json({message:"User Found"});
             console.log(User);
+            changevar();
         }
         else{
             res.status(200).json({message:"User Not Found!!!!"})
