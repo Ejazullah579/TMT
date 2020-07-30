@@ -274,6 +274,25 @@ ul#scene li.title{
 ul#scene{
     margin-top: 100px;
 }
+.info{
+    position: relative;
+    margin-left: -60px;
+    margin-top: 15px;
+}
+#usericon{
+    width:20px;
+    height:20px;
+}
+.user{
+    padding-bottom: 20px;
+    border-radius: 30px;
+}
+.user_info:hover .movie{
+    transition: 0.8s ease-in-out;
+        position: absolute;
+        display: block;
+        height: auto;
+}
 .btn{
     text-decoration: none;
     margin-top: 150px;

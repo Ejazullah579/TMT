@@ -1,12 +1,19 @@
 
 const express = require('express');
 const router = express.Router();
+const app=express();
 const User = require('../schemas/user');
-const { json } = require('body-parser');
+const bodyparser = require('body-parser');
+
+/////////////////  Setting Templating engine
+const ejs = require("ejs");
+app.set('view engine', 'ejs');
+app.use(express.static("public"));
+
 
 
 router.get('/', function(req, res, next) {
-    res.render('index');
+    res.render('/home.ejs')
   });
 
 
@@ -27,7 +34,6 @@ router.post('/get_info', async (req, res, next) => {
 
             res.status(200).json({message:"User Found"});
             console.log(User);
-            global.localStorage.setItem('user_info',1);
         }
         else{
             res.status(200).json({message:"User Not Found!!!!"})
@@ -52,7 +58,7 @@ router.post('/insert', async (req, res, next) => {
     res.status(200).json({
         message: "User has Been Added Successfully"
     });
-    res.redirect('/');
+    // res.redirect('/');
 });
 
 //////////// Deleting User
@@ -63,6 +69,21 @@ router.delete('/:req', async (req, res, next) => {
     .catch(err => res.status(500).json({Error:err}));
 });
 
+function changevar(){
+    var dat={
+        "user_info":1
+    };
+    var data=JSON.stringify(dat);
+    fs.writeFile('E:/try/api/var.json',data,res=>{
+        console.log(JSON)
+    });
+}
 
 
 module.exports = router;
+exports.getdata=function(){
+    return data;
+};
+exports.setdata=function(val){
+     data=val;
+};
