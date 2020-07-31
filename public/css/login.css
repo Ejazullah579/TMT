@@ -1,38 +1,48 @@
-.m-container{
-    margin-top: 650px;
+.main-container{
+    margin-top: -800px;
     height: 100vh !important;
     width: 100vw !important;
-    position: fixed;    
-    padding-left: 20% !important;
-    padding-right:20% !important;
-    padding-top: 5%;
+    position: fixed; 
+    padding-left: 38% !important;
+    padding-right:38% !important;
+    padding-top: 7%;
     backdrop-filter: blur(15px);
     background: none !important;
     z-index: 999999;
     transition: transit 1s linear;
+    
 }
-.s-container{
+@keyframes transit{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.c-icon{
+    position: relative;
+    border-radius: 10px;
+    float: right;
+}
+.dblock{
+    display: block;
+}
+.sub-container{
+    box-shadow: 0 0 10px 5px white;
     background: #0F1A21;
     border-radius: 20px;
     padding:20px;
     padding-right:30px !important;
-    padding-bottom:50px !important;
-}
-.colum2{
-    padding: 15px !important;
-    padding-right: 50px !important;
-}
-.form_title{
-    text-align: center;
-    padding-left: 10px;
-    padding-bottom: 30px;
-    font-weight: 600;
-    font-size: 30px;
+    padding-bottom:60px !important;
+    padding-top:30px !important;
+    transition: transit 1s linear;
+    transition: 1s ease-in-out;
 }
 /* #contact-form{
     
 } */
-input:focus,textarea:focus{
+#contact-form input:focus,textarea:focus{
     box-shadow: 0 0 5px #03e9f4,
             0 0 10px #03e9f4,
             0 0 10px #03e9f4,
@@ -56,23 +66,6 @@ input:focus,textarea:focus{
         background: orange; 
     }
 }
-.fl_info input{
-    margin: 0 10px !important;
-}
-.col11{
-    margin-right: 10px !important;
-}
-.sel_pic{
-    margin-left: 55px !important;
-    margin-top: 30px !important;
-    background: url(../images/demo.png) no-repeat;
-}
-.select_img{
-    padding-top: 80%;
-    padding-left: 50px;
-    margin-left:-20px !important;
-    padding-right:0px !important;
-}
 .s-btn:not(:hover){
     transition: 0.3s ease-in-out;
     border: none;
@@ -87,14 +80,27 @@ input:focus,textarea:focus{
     color: white;
     animation: blink 1s linear infinite;
 }
-.s-container input{
+.sub-container input{
     margin: 10px;
 }
 .sign_up{
     float: right;
     text-decoration: none !important;
     font-size: 14px;
-    background: none;
-    color:dodgerblue;
-    font-weight: 700;
+}
+.sign_up:hover{
+    transform: scale(1.1);
+    color: floralwhite;
+}
+.form_logo{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form_logo img{
+    height: 130px;
+    width: auto; 
+    margin-bottom: 20px;
+    
 }

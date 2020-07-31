@@ -5,6 +5,20 @@ body{
 /* #li-img:nth-child(36){
  margin-left: 14.9%;
 } */
+.genre-type{
+    width: 100%;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+.genre-type-text{
+    font-family: 'ethno';
+    font-size: 45px;
+}
+#moviess{
+    padding-bottom:50px;
+    padding-top: 10x;
+}
 #list-itemm{
     display: inline-block;
     position: relative;

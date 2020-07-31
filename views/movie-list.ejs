@@ -4,11 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>Movie List Info</title>
-  <link rel="stylesheet" href="css/loading.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/Movie.css">
-  <link rel="stylesheet" href="css/search-box.css">
-  <link rel="stylesheet" href="css/main.css" class="css">
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/Movie.css">
+  <link rel="stylesheet" href="/css/signup.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/search-box.css">
+  <link rel="stylesheet" href="/css/main.css" class="css">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
@@ -22,58 +24,12 @@
     <h1 id="samo">Loading...</h1>
   </div>
   <!-- -------Loading screen end------- -->
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark nav-wraper ">
-      <div class="logo">
-        <a href="index.htm">
-          <img src="images/sitelogo.png" alt="" class="logo navbar-brand" id="logo">
-        </a>
-      </div>
-      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu">
-        <span style="z-index: 1000;color:white;" class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-menu">
-      <ul class="navbar-nav menu m-xs-auto ml-auto">
-        <li class="nav-item listt"><a id="n1" href="index.htm">Home</a></li>
-        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movies</a>
-          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
-          <ul class="">
-            <li onclick="movielistSelected('movie',28)" id="Action" class=" movie-item"><a>Action</a></li>
-            <li onclick="movielistSelected('movie',35)" id="Comedy" class=" movie-item"><a>Comedy</a></li>
-            <li onclick="movielistSelected('movie',16)" id="Animation" class=" movie-item"><a>Animation</a></li>
-            <li onclick="movielistSelected('movie',14)" id="Fantasy" class=" movie-item"><a>Fantasy</a></li>
-            <li onclick="movielistSelected('movie',12)" id="Adventure" class=" movie-item"><a>Adventure</a></li>
-          </ul>
-        </div>
-        </li>
-        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="n1" href="#">Tv Shows</a>
-          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
-          <ul class="">
-            <li onclick="sessionStorage.setItem('show_type','top_rated'),movielistSelected('tv',28)" id="Action" class="movie-item"><a>Top Rated</a></li>
-            <li onclick="sessionStorage.setItem('show_type','on_the_air',movielistSelected('tv',35))" id="Comedy" class="movie-item"><a>On Air Shows</a></li>
-          </ul>
-        </div>
-        </li>
-        <li class="nav-item listt"><a id="n1" href="#">News</a></li>
-        <li class="nav-item listt"><a id="n1" href="about_us.html">About</a></li>
-        <li class="nav-item">
-          <form id="searchForm">
-            <div class="search-box">
-
-              <input autocomplete="off" id="searchText" class="search-text" type="text" placeholder="Type to Search">
-              <a href="#" class="search-btn">
-                <i onclick="getMovies($('#searchText').val())" class="fas fa-search"></i>
-              </a>
-              <ul id="result"></ul>
-            </div>
-          </form>
-        </li>
-
-      </ul>
-    </div>
-    </nav>
-    <div class="menu-trigger js-menu-trigger"></div>
-  </header>
+  <!---------- Login Form ----------->
+<%- include("others/login-form") -%>
+<!------------ Sign up Form --------->
+<%- include("others/signup-form") -%>
+<!----------------End  ----------------->
+  <%- include("others/nav-bar") -%>
 <!------------- navigation end --------------->
   <div class="container">
     <div id="movies" class="well">
@@ -138,12 +94,12 @@
      $('.loading_screen').css("display","none");
    }, 4000)
  </script>
-  <script src="scripts/main.js"></script>
+  <script src="/scripts/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="scripts/movie-api.js"></script>
-  <script src="scripts/movie-list.js"></script>
+  <script src="/scripts/movie-api.js"></script>
+  <script src="/scripts/movie-list.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
     integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

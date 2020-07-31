@@ -1,14 +1,10 @@
 
-// let user_info= localStorage.getItem('user_info');
-var data=require('../api/routes/route1');
-var user_info=data.getdata();
-
 $(document).ready(() => {
     // let shit=async function(){
     //      await getvarvalue();
     // };
     // shit();
-    console.log("user_info:"+user_info);
+    // console.log("user_info:"+user_info);
     // if (user_info == 0||user_info==null||user_info==undefined) {
     //     // var item = `<button class="s-btn login_btn">Log in</button>`;
     //     // $('.user_info').html(item);

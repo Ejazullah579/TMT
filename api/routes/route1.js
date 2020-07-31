@@ -3,18 +3,42 @@ const express = require('express');
 const router = express.Router();
 const User = require('../schemas/user');
 const { json } = require('body-parser');
-const fs=require('fs');
-var user_info=JSON.parse(fs.readFileSync('E:/try/api/var.json'));
-var data;
+const app=express();
 app.set('view engine', 'ejs');
+let Login_status;
 
 
-
+////////////////// Website Routes ///////////
 router.get('/', function(req, res, next) {
-    res.sendFile('E:/try/'+'/index.htm')
+    res.render('home',{Login_status:Login_status});
   });
 
+  router.get('/movie', function(req, res, next) {
+    res.render('movie',{Login_status:Login_status});
+  });
 
+  router.get('/movie-list', function(req, res, next) {
+    res.render('movie-list',{Login_status:Login_status});
+  });
+
+  router.get('/movie-list-genre', function(req, res, next) {
+    res.render('movie-list-genre',{Login_status:Login_status});
+  });
+
+  router.get('/about_us', function(req, res, next) {
+    res.render('about_us',{Login_status:Login_status});
+  });
+
+  router.get('/logout', function(req, res, next) {
+    Login_status=0;
+    res.redirect(req.get('referer'));
+  });
+
+  router.get('/user_profile', function(req, res, next) {
+    res.render('user_profile',{Login_status:Login_status});
+});
+
+////////////////// END ///////////////////////
 ///////////  For Getting All List
 router.get('/get_list', async (req, res, next) => {
     User.find().exec()
@@ -29,13 +53,15 @@ router.post('/get_info', async (req, res, next) => {
     User.findOne({user_name:req_user_name,user_password:req_user_password}).exec()
     .then(User => {
         if(User){
-
-            res.status(200).json({message:"User Found"});
+            res.status(200);
+            Login_status=1;
+            res.redirect(req.get('referer'));
+            
             console.log(User);
-            changevar();
+            
         }
         else{
-            res.status(200).json({message:"User Not Found!!!!"})
+            res.status(200).json({message:"User Not Found!!!!"});
         }
     })
     .catch(err =>res.status(500).json({Error:err}));

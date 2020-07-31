@@ -1,0 +1,65 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark nav-wraper ">
+      <div class="logo">
+        <a href="/">
+          <img src="/images/sitelogo.png" alt="" class="logo navbar-brand" id="logo">
+        </a>
+      </div>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbar-menu">
+        <span style="z-index: 1000;color:white;" class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="navbar-nav menu m-xs-auto ml-auto">
+        <li class="nav-item listt"><a id="n1" href="/"><i class="fa fa-home"></i>Home</a></li>
+        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movies</a>
+          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="">
+            <li onclick="sessionStorage.setItem('genre-type','Action'),movielistSelected('movie',28)" id="Action" class=" movie-item"><a>Action</a></li>
+            <li onclick="sessionStorage.setItem('genre-type','Comedy'),movielistSelected('movie',35)" id="Comedy" class=" movie-item"><a>Comedy</a></li>
+            <li onclick="sessionStorage.setItem('genre-type','Animation'),movielistSelected('movie',16)" id="Animation" class=" movie-item"><a>Animation</a></li>
+            <li onclick="sessionStorage.setItem('genre-type','Fantasy'),movielistSelected('movie',14)" id="Fantasy" class=" movie-item"><a>Fantasy</a></li>
+            <li onclick="sessionStorage.setItem('genre-type','Adventure'),movielistSelected('movie',12)" id="Adventure" class=" movie-item"><a>Adventure</a></li>
+          </ul>
+        </div>
+        </li>
+        <li class="nav-item listt"><a class="dropdown-toggle" id="n1" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="n1" href="#">Tv Shows</a>
+          <div style="background: none;border: none;" class=" movie dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="">
+            <li onclick="sessionStorage.setItem('genre-type','Top Rated'),sessionStorage.setItem('show_type','top_rated'),movielistSelected('tv',28)" id="Action" class="movie-item"><a>Top Rated</a></li>
+            <li onclick="sessionStorage.setItem('genre-type','On Air'),sessionStorage.setItem('show_type','on_the_air',movielistSelected('tv',35))" id="Comedy" class="movie-item"><a>On Air Shows</a></li>
+          </ul>
+        </div>
+        </li>
+        <li class="nav-item listt"><a id="n1" href="#">News</a></li>
+        <li class="nav-item listt"><a id="n1" href="/about_us">About</a></li>
+        <li class="nav-item">
+          <form id="searchForm">
+            <div class="search-box">
+
+              <input autocomplete="off" id="searchText" class="search-text" type="text" placeholder="Type to Search">
+              <a href="#" class="search-btn">
+                <i onclick="getMovies($('#searchText').val())" class="fas fa-search"></i>
+              </a>
+              <ul id="result"></ul>
+            </div>
+          </form>
+        </li>
+        <li class="nav-item user_info ">
+          <% if (Login_status==null||Login_status==0||Login_status==undefined) { %>
+            <button class="s-btn login_btn">Log in</button>
+          <% }else {%>
+            <div class="user "><i class="fa fa-user " id="usericon"></i>
+              <ul class="info movie">
+                <li class="user_name movie-item"> Ejazullah</li>
+                <li class="profile movie-item">Edit Profile</li>
+                <li class="logout movie-item"><a href="/logout">Log out</a></li>
+              </ul>
+            </div>
+          <% } %>
+          
+        </li>
+      </ul>
+    </div>
+    </nav>
+    <div class="menu-trigger js-menu-trigger"></div>
+  </header>

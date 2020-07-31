@@ -1,0 +1,18 @@
+<!---------- Login Form ----------->
+<div class="main-container" id="main-container">
+    <div class="container sub-container">
+      <div style="height: 20px;">
+        <i onclick="hideloginform()" class="fa fa-times c-icon"></i>
+      </div>
+        <form action="http://localhost:3000/get_info" method="POST" class="" id="contact-form">
+            <div class="form_logo">
+                <img src="/images/sitelogo.png" alt="NO image" class="form_logo_img">
+            </div>
+            <input class="form-control f-name" type="text" name="user_name" placeholder="User Name" autocomplete="off" required>
+            <input class="form-control l-name" type="text" name="user_password" placeholder="User Password" autocomplete="off" required>
+            <input class="form-control s-btn" type="submit" value="Submit">
+        </form>
+        <button onclick="showsignupform()"  class="sign_up">Register Here!</button>
+    </div>
+    </div>
+    <!--------------End  ------------>

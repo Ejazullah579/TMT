@@ -45,14 +45,14 @@ function getMovies(searchText) {
 function movieSelected(id,type) {
   sessionStorage.setItem('movieId', id);
   sessionStorage.setItem('typething', type);
-  window.location = 'movie.html';
+  window.location = '/movie';
   return false;
 }
 function movielistSelected(type,id) {
   localStorage.setItem('page_no',1);
   sessionStorage.setItem('type', type);
   sessionStorage.setItem('moviegenre', id);
-  window.location = 'movie-list-genre.html';
+  window.location = '/movie-list-genre';
   return false;
 }
 

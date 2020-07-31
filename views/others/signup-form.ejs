@@ -1,0 +1,41 @@
+    <!------------ Sign up Form --------->
+
+    <div class="m-container">
+        <div class="container s-container">
+          <div style="height: 20px;">
+            <i onclick="hidesignupform()" class="fa fa-times c-icon"></i>
+          </div>
+            <div class="row form-row">
+                <div class="col-md-5 col-sm-3 sel_pic">
+                    <input class="form-control-file select_img" type="file" name="profile_pic" id="">
+                </div>
+                <div class="col colum2">
+                    <h2 class="form_title">
+                        Complete the Following Fields for Registration
+                    </h2>
+                    <form action="http://localhost:3000/insert" method="POST" class="" id="contact-form">
+  
+                        <div style="padding: 0;" class="row fl_info no-gutters">
+                            <div class="col col11">
+                                <input class="form-control first_name" type="text" name="first_name"
+                                    placeholder="First Name" required autocomplete="off">
+                            </div>
+                            <div class="col">
+                                <input class="form-control last_name" type="text" name="last_name"
+                                    placeholder="Last Name" required autocomplete="off">
+                            </div>
+                        </div>
+                        <input class="form-control email" type="text" name="email" placeholder="Email Address" required
+                            autocomplete="off">
+                        <input class="form-control user_name" type="text" name="user_name" placeholder="User Name"
+                            required autocomplete="off">
+                        <input class="form-control password_name" type="text" name="user_password"
+                            placeholder="Password" required autocomplete="off">
+                        <input class="form-control s-btn" type="submit" value="Submit" autocomplete="off">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------- End  ---------------->

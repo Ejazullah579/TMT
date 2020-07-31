@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Movie Genre</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/movie-genre.css">
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/signup.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/search-box.css">
+  <link rel="stylesheet" href="/css/neon-btn.css">
+  <link rel="stylesheet" href="/css/main.css" class="css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- -------Loading screen------- -->
+  <div class="loading_screen">
+    <svg>
+        <circle cx="70" cy="70" r="70"></circle>
+    </svg>
+    <h1 id="samo">Loading...</h1>
+  </div>
+  <!-- -------Loading screen end------- -->
+  <!---------- Login Form ----------->
+<%- include("others/login-form") -%>
+<!------------ Sign up Form --------->
+<%- include("others/signup-form") -%>
+<!----------------End  ----------------->
+  <%- include("others/nav-bar") -%>
+  <!------------------------------------------>
+  <!--------------- navigation end --------------->
+  <!------------------------------------------>
+
+  <div class="genre-type">
+    <h1 class="genre-type-text"></h1>
+  </div>
+
+  <div id="img-container" class="container">
+    <div id="moviess" class="well">
+
+      <div style="padding-bottom:50px;padding-top:70px" class="row">
+        <ul class="list-group ul-main">
+          <li classs="list-group-item" id="list-itemmm"></li>
+        </ul>
+        
+        <div class="btns">
+          <a onclick="prevbtn()" style="display: inline;" class="btn btn-primary" href="">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Prev
+          </a>
+          <a onclick="nextbtn()" style="display: inline;" class="btn btn-primary" href="">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Next
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script>
+      setTimeout(function(){
+        $('.loading_screen').css("display","none");
+      }, 2500)
+    </script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="/scripts/movie-genre.js"></script>
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/movie-api.js"></script>
+  <script>
+  let moviegen = sessionStorage.getItem('moviegenre');
+  let page_noo = localStorage.getItem('page_no');
+  let type = sessionStorage.getItem('type');
+  getMovieslist(type,moviegen,page_noo);
+  $('.genre-type-text').html(sessionStorage.getItem('genre-type'));
+  </script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+</body>
+
+</html>
