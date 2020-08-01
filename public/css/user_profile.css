@@ -1,0 +1,83 @@
+.mc{
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+.pf-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile_pic{
+    width: 300px;
+    height: auto;
+    border-radius: 30px;
+}
+.name-div{
+    padding-top: 30px;
+}
+.heading{
+    display: block;
+    color: orange;
+}
+.heading-name-text{
+    display: block;
+    font-family: 'ethno';
+    padding:15px  0;
+    font-size: 35px;
+    padding-bottom: 35px;
+}
+.heading-detail-text{
+    display: block;
+    padding:15px  0;
+    font-size: 18px;
+}
+.buttons-div{
+    padding-top: 30px !important;
+}
+.edit-pf{
+    border-radius: 30px;
+    margin-bottom: 25px;
+    display: block;
+    text-decoration: none;
+    background: none;
+    padding: 10px 15px;
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 0 8px 3px white;
+}
+.edit-pf:focus{
+    border: none;
+    outline: none;
+}
+.edit-pf:hover{
+    animation: blink2 0.5s linear infinite;
+}
+@keyframes blink2{
+    0%{
+        box-shadow: 0 0 8px 3px white;
+        transform: scale(1);
+    }
+    50%{
+        box-shadow: 0 0 30px 3px #03e9f4;
+        transform: scale(1.1);
+    }
+    100%{
+        box-shadow: 0 0 8px 3px white;
+        transform: scale(1);
+    }
+}
+@media only screen and (max-width: 690px){
+    .heading,.heading-name-text,.heading-detail-text{
+        display: block;
+    }
+    .name-div,.email-div,.user-info-div{
+        text-align: center;
+    }
+    .buttons-div{
+        display: flex;
+        justify-content: center;
+    }
+    .edit-pf{
+        margin:0 10px;
+    }
+}

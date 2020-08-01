@@ -19,16 +19,25 @@
   <!-- -------Loading screen------- -->
   <div class="loading_screen">
     <svg>
-        <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70"></circle>
     </svg>
     <h1 id="samo">Loading...</h1>
   </div>
   <!-- -------Loading screen end------- -->
+  <% if (Error==1) { %>
+  <%- include("others/messages/Error") -%>
+
+  <%} else if (Error==2) { %>
+  <%- include("others/messages/Success") -%>
+
+  <%} else if (Error==3) { %>
+  <%- include("others/messages/Warning") -%>
+  <% }%>
   <!---------- Login Form ----------->
-<%- include("others/login-form") -%>
-<!------------ Sign up Form --------->
-<%- include("others/signup-form") -%>
-<!----------------End  ----------------->
+  <%- include("others/login-form") -%>
+  <!------------ Sign up Form --------->
+  <%- include("others/signup-form") -%>
+  <!----------------End  ----------------->
   <%- include("others/nav-bar") -%>
   <!------------------------------------------>
   <!--------------- navigation end --------------->
@@ -45,7 +54,7 @@
         <ul class="list-group ul-main">
           <li classs="list-group-item" id="list-itemmm"></li>
         </ul>
-        
+
         <div class="btns">
           <a onclick="prevbtn()" style="display: inline;" class="btn btn-primary" href="">
             <span></span>
@@ -68,23 +77,23 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script>
-      setTimeout(function(){
-        $('.loading_screen').css("display","none");
-      }, 2500)
-    </script>
+  <script>
+    setTimeout(function () {
+      $('.loading_screen').css("display", "none");
+    }, 2500)
+  </script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/scripts/movie-genre.js"></script>
   <script src="/scripts/main.js"></script>
   <script src="/scripts/movie-api.js"></script>
   <script>
-  let moviegen = sessionStorage.getItem('moviegenre');
-  let page_noo = localStorage.getItem('page_no');
-  let type = sessionStorage.getItem('type');
-  getMovieslist(type,moviegen,page_noo);
-  $('.genre-type-text').html(sessionStorage.getItem('genre-type'));
+    let moviegen = sessionStorage.getItem('moviegenre');
+    let page_noo = localStorage.getItem('page_no');
+    let type = sessionStorage.getItem('type');
+    getMovieslist(type, moviegen, page_noo);
+    $('.genre-type-text').html(sessionStorage.getItem('genre-type'));
   </script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
     integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </body>

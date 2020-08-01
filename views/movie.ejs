@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body{
-        background-color:darkslategrey;
-      }
-    </style>
-    <meta charset="utf-8">
-    <title>MovieInfo</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/movie-detail.css">
-    <link rel="fonts" href="fonts/p1.ttf">
-    <link rel="stylesheet" href="/css/search-box.css">
-    <link rel="stylesheet" href="/css/loading.css">
-    <link rel="stylesheet" href="/css/signup.css">
-  <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/main.css" class="css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
-  </head>
-  <body>
 
-   <!-- -------Loading screen------- -->
-    <div class="loading_screen">
-      <svg>
-          <circle cx="70" cy="70" r="70"></circle>
-      </svg>
-      <h1 id="samo">Loading...</h1>
-    </div>
-    <!-- -------Loading screen end------- -->
-    <!---------- Login Form ----------->
-<%- include("others/login-form") -%>
-<!------------ Sign up Form --------->
-<%- include("others/signup-form") -%>
-<!----------------End  ----------------->
-    <%- include("others/nav-bar") -%>
+<head>
+  <style>
+    body {
+      background-color: darkslategrey;
+    }
+  </style>
+  <meta charset="utf-8">
+  <title>MovieInfo</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/movie-detail.css">
+  <link rel="fonts" href="fonts/p1.ttf">
+  <link rel="stylesheet" href="/css/search-box.css">
+  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/signup.css">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/main.css" class="css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- -------Loading screen------- -->
+  <div class="loading_screen">
+    <svg>
+      <circle cx="70" cy="70" r="70"></circle>
+    </svg>
+    <h1 id="samo">Loading...</h1>
+  </div>
+  <!-- -------Loading screen end------- -->
+  <!---------- Login Form ----------->
+  <% if (Error==1) { %>
+  <%- include("others/messages/Error") -%>
+
+  <%} else if (Error==2) { %>
+  <%- include("others/messages/Success") -%>
+
+  <%} else if (Error==3) { %>
+  <%- include("others/messages/Warning") -%>
+  <% }%>
+
+  <%- include("others/login-form") -%>
+  <!------------ Sign up Form --------->
+  <%- include("others/signup-form") -%>
+  <!----------------End  ----------------->
+  <%- include("others/nav-bar") -%>
   <!---------Trailor Overlay ------->
   <div class="p-xs-5 m-xs-5" onclick="turnoff()" id="overlay">
-    <div style="height: 80%;"  id="content"></div>
-    </div>
-    </div>
+    <div style="height: 80%;" id="content"></div>
+  </div>
+  </div>
   <!----------- end ------------->
-    <div style="padding-top: 100px;" class="container">
-      <div id="movie" class="well"></div>
-    </div>
-    <div class="row ml-md-5" style="padding-left: 15px;">
-      <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">Leading rolls</h2>
-      <ul style="display: inline;" id="crew" class="list-group">
-      </ul>
-    </div>
+  <div style="padding-top: 100px;" class="container">
+    <div id="movie" class="well"></div>
+  </div>
+  <div class="row ml-md-5" style="padding-left: 15px;">
+    <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
+      Leading rolls</h2>
+    <ul style="display: inline;" id="crew" class="list-group">
+    </ul>
+  </div>
 
-      <div style="padding-left: 55px;padding-right: 55px;">
-      <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">Images</h2>
-      <ul style="display: inline;" id="imagess" class="list-group">
-      </ul>
-    </div>
-   
+  <div style="padding-left: 55px;padding-right: 55px;">
+    <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
+      Images</h2>
+    <ul style="display: inline;" id="imagess" class="list-group">
+    </ul>
+  </div>
 
-    <script src="scripts/main.js"></script>
-    <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+
+  <script src="scripts/main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/scripts/movie-api.js"></script>
   <script src="/scripts/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    </script>
-    <script>
-      setTimeout(function(){
-        $('.loading_screen').css("display","none");
-      }, 1500)
-    </script>
-    <script>
-      function turnon(movie_id){
-        console.log(movie_id);
-          $('#overlay').css("display","block"); 
-          let lop=`<iframe class="bomb" id="frame" width="80%" frameborder="0" allowfullscreen height="100%" src="${movie_id}">
-                    </iframe>`;
-          $('#content').html(lop);
-      }
-      function turnoff(){
-          $('#overlay').css("display","none"); 
-          $('#frame').remove();
-      }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
   </script>
   <script>
-      getMovie();
+    setTimeout(function () {
+      $('.loading_screen').css("display", "none");
+    }, 1500)
   </script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </body>
+  <script>
+    function turnon(movie_id) {
+      console.log(movie_id);
+      $('#overlay').css("display", "block");
+      let lop = `<iframe class="bomb" id="frame" width="80%" frameborder="0" allowfullscreen height="100%" src="${movie_id}">
+                    </iframe>`;
+      $('#content').html(lop);
+    }
+    function turnoff() {
+      $('#overlay').css("display", "none");
+      $('#frame').remove();
+    }
+  </script>
+  <script>
+    getMovie();
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+
 </html>

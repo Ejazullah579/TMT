@@ -19,37 +19,51 @@
   <!-- -------Loading screen------- -->
   <div class="loading_screen">
     <svg>
-        <circle cx="70" cy="70" r="70"></circle>
+      <circle cx="70" cy="70" r="70"></circle>
     </svg>
     <h1 id="samo">Loading...</h1>
   </div>
   <!-- -------Loading screen end------- -->
+  <% if (Error==1) { %>
+  <%- include("others/messages/Error") -%>
+
+  <%} else if (Error==2) { %>
+  <%- include("others/messages/Success") -%>
+
+  <%} else if (Error==3) { %>
+  <%- include("others/messages/Warning") -%>
+  <% }%>
   <!---------- Login Form ----------->
-<%- include("others/login-form") -%>
-<!------------ Sign up Form --------->
-<%- include("others/signup-form") -%>
-<!----------------End  ----------------->
+  <%- include("others/login-form") -%>
+  <!------------ Sign up Form --------->
+  <%- include("others/signup-form") -%>
+  <!----------------End  ----------------->
   <%- include("others/nav-bar") -%>
-<!------------- navigation end --------------->
+  <!------------- navigation end --------------->
   <div class="container">
     <div id="movies" class="well">
       <div style="padding-bottom:50px;padding-top:30px" class="row">
         <div class="col-md-4 s4">
           <div class="swiper-container s3">
             <div class="swiper-wrapper">
-                <div class="swiper-slide m-slide"><img onclick="movieSelected(431693,'movie')" width="300" height="auto" src="images/cube1.jpg"></img></div>
-                <div class="swiper-slide m-slide"><img onclick="movieSelected(72545,'movie')" width="300" height="auto" src="images/cube2.jpg"></img></div>
-                <div class="swiper-slide m-slide"><img onclick="movieSelected(299534,'movie')" width="300" height="auto" src="images/cube3.jpg"></img></div>
-                <div class="swiper-slide m-slide"><img onclick="movieSelected(420817,'movie')" width="300" height="auto" src="images/cube4.jpg"></img></div>
-                <div class="swiper-slide m-slide"><img onclick="movieSelected(512200,'movie')" width="300" height="auto" src="images/cube5.jpg"></img></div>
-              </div>  
+              <div class="swiper-slide m-slide"><img onclick="movieSelected(431693,'movie')" width="300" height="auto"
+                  src="images/cube1.jpg"></img></div>
+              <div class="swiper-slide m-slide"><img onclick="movieSelected(72545,'movie')" width="300" height="auto"
+                  src="images/cube2.jpg"></img></div>
+              <div class="swiper-slide m-slide"><img onclick="movieSelected(299534,'movie')" width="300" height="auto"
+                  src="images/cube3.jpg"></img></div>
+              <div class="swiper-slide m-slide"><img onclick="movieSelected(420817,'movie')" width="300" height="auto"
+                  src="images/cube4.jpg"></img></div>
+              <div class="swiper-slide m-slide"><img onclick="movieSelected(512200,'movie')" width="300" height="auto"
+                  src="images/cube5.jpg"></img></div>
+            </div>
             <div id="pagination" class="swiper-pagination"></div>
           </div>
         </div>
         <div id="movie-container" class="col-md-8">
           <h2 onclick="movielistSelected(28)" id="M-heading">Action</h2>
           <ul class="list-group ul-main">
-            
+
             <li id="action" class="">
               <div class="swiper-container s1">
                 <div id="movie-list-action" class="swiper-wrapper"></div>
@@ -90,10 +104,10 @@
   </div>
 
   <script>
-    setTimeout(function(){
-     $('.loading_screen').css("display","none");
-   }, 4000)
- </script>
+    setTimeout(function () {
+      $('.loading_screen').css("display", "none");
+    }, 4000)
+  </script>
   <script src="/scripts/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"
     integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
@@ -104,14 +118,14 @@
     integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    
+
   </script>
   <!-- Initialize Swiper -->
   <script>
 
   </script>
   <script>
-   
+
     swiper_update3();
     getMovieslist(28);
     getMovieslist(35);
@@ -121,10 +135,10 @@
     getMovieslist(12);
     swiper_update2();
     swiper_update3();
-    
-    $('.swiper-container').css("height","200");
-    setTimeout(function(){
-      $('.swiper-container').css("height","inherit");
+
+    $('.swiper-container').css("height", "200");
+    setTimeout(function () {
+      $('.swiper-container').css("height", "inherit");
     }, 3000)
 
 
@@ -136,12 +150,12 @@
         spaceBetween: 8,
         loopedslides: 5,
         freeMode: true,
-        updateOnWindowResize:true,
+        updateOnWindowResize: true,
         loop: true,
         autoHeight: true,
         mousewheel: true,
       });
-       
+
     }
     function swiper_update2() {
       var swiiper = new Swiper('.s2', {
@@ -156,28 +170,28 @@
     }
     function swiper_update3() {
       var swiper = new Swiper('.s3', {
-        effect:'cube',
+        effect: 'cube',
         observeParents: true,
         observer: true,
         freeMode: true,
-        freeModeSticky:true,
-        freeModeMomentumBounceRatio:5,
+        freeModeSticky: true,
+        freeModeMomentumBounceRatio: 5,
         slidesPerView: 5,
         spaceBetween: 8,
         loop: true,
         autoHeight: true,
         autoplay: {
-        delay: 2000,
-        disableOnInteraction: false,
-      },
+          delay: 2000,
+          disableOnInteraction: false,
+        },
         pagination: {
-        el: '.swiper-pagination',
-      },
+          el: '.swiper-pagination',
+        },
       });
     }
-    
+
   </script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>

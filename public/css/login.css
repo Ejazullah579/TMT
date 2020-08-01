@@ -9,8 +9,7 @@
     backdrop-filter: blur(15px);
     background: none !important;
     z-index: 999999;
-    transition: transit 1s linear;
-    
+    transition: transit 1s linear;    
 }
 @keyframes transit{
     0%{
@@ -54,6 +53,10 @@
     font-size: 18px !important;
     border: 2px solid orange !important;
     transition: 0.3s ease-in-out;
+}
+.s-btn:focus{
+    border: none;
+    outline: none;
 }
 @keyframes blink{
     0%{
@@ -103,4 +106,18 @@
     width: auto; 
     margin-bottom: 20px;
     
+}
+@media only screen and (max-width: 690px){
+    .main-container{
+        padding-left: 20% !important;
+        padding-right:20% !important;
+        padding-top: 12%;  
+    }
+}
+@media only screen and (min-width:691px) and (max-width: 1024px){
+    .main-container{
+        padding-left: 30% !important;
+        padding-right:30% !important;
+        padding-top: 12%;  
+    }
 }

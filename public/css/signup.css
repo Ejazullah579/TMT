@@ -98,3 +98,45 @@
     color:dodgerblue;
     font-weight: 700;
 }
+
+@media only screen and (max-width: 690px){
+
+        .m-container{
+            padding-left: 5% !important;
+            padding-right:5% !important;
+            padding-top: 2%;  
+        }
+        .s-container{
+            margin-top: 20px;
+            padding:8px;
+            padding-right:11px !important;
+            padding-bottom:20px !important;
+        }
+        .select_img{
+            padding-top: 10%;
+            padding-left: 50px; 
+        }
+        .sel_pic{
+            margin-top: 0px !important;
+        }
+}
+@media only screen and (min-width:691px) and (max-width: 1024px){
+    .m-container{
+        padding-left: 5% !important;
+        padding-right:5% !important;
+        padding-top: 2%;  
+    }
+    .s-container{
+        margin-top: 20px;
+        padding:8px;
+        padding-right:11px !important;
+        padding-bottom:20px !important;
+    }
+    .select_img{
+        padding-top: 85%;
+        padding-left: 50px; 
+    }
+    .sel_pic{
+        margin-top: 30px !important;
+    }
+}

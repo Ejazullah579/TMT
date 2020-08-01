@@ -277,14 +277,14 @@ ul#scene{
 .info{
     position: relative;
     margin-left: -60px;
-    margin-top: 15px;
+    padding-top: 10px;
 }
 #usericon{
     width:20px;
     height:20px;
 }
 .user{
-    padding-bottom: 20px;
+    
     border-radius: 30px;
 }
 .user_info:hover .movie{
@@ -449,6 +449,71 @@ footer h1{
         padding-bottom:50px;
         padding-top: 10px;
     }
+    .error-div{
+        z-index: 2;
+        margin-top: 110px;
+        width: 80%;
+        position: absolute;
+        margin-left: 150px;
+    }
+    
+    /* 404 Page settings */
+
+    .mcc{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .txt-wraper{    
+        text-align: center; 
+        animation: fire-flies 4s linear infinite;  
+    }
+    .primary-t,.secondry-t{
+        display: block;
+        font-family: 'ethno';
+        animation: Glowy 4s linear infinite;
+    }
+    .primary-t{
+        font-size: 140px;
+    }
+    .secondry-t{
+        font-size: 30px;
+    }
+    @keyframes Glowy{
+        0%{
+            color: white;
+        }
+        25%{
+            color: white;
+        }
+        40%{
+            color:orangered ;
+        }
+        60%{
+            color:orangered ;
+        }
+        75%{
+            color: white;
+        }
+        100%{
+            color: white;
+        }
+    }
+    @keyframes fire-flies{
+        0%{
+            transform: scale(1);
+        }
+        50%{
+            transform: scale(1.4);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
 
 /* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-*/
 @media only screen and (max-width: 690px){
@@ -546,5 +611,8 @@ footer h1{
             0 0 20px #03e9f4,
             0 0 20px #03e9f4;
        }
+       .error-div{
+        margin-left: 60px;
+    }
   
 }

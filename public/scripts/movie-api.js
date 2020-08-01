@@ -137,7 +137,7 @@ function getMovie() {
             <div class="row">
               <div style="padding-bottom:20px;padding-top:15px;padding-left:16px;" class="well">
                 <a id="btn_info" onclick="turnon('${link}')" class="btn-success">Trailar</a>
-                <a id="btn_info" href="index.htm" class="btn-warning">Home</a>
+                <a id="btn_info" href="/" class="btn-warning">Home</a>
               </div>
               </div>
           </div>
