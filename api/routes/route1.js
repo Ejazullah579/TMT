@@ -44,31 +44,31 @@ const upload =multer({
 
 ////////////////// Website Routes ///////////
 router.get('/', function (req, res, next) {
-    res.render('home', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('home', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message,User_info:req.session.u_info });
     disable_error();
 });
 
 router.get('/movie', function (req, res, next) {
-    res.render('movie', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('movie', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message,User_info:req.session.u_info });
 });
 
 router.get('/movie-list', function (req, res, next) {
-    res.render('movie-list', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('movie-list', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message ,User_info:req.session.u_info});
     disable_error();
 });
 
 router.get('/movie-list-genre', function (req, res, next) {
-    res.render('movie-list-genre', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('movie-list-genre', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message,User_info:req.session.u_info });
     disable_error();
 });
 
 router.get('/about_us', function (req, res, next) {
-    res.render('about_us', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('about_us', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message,User_info:req.session.u_info });
     disable_error();
 });
 
 router.get('/404', function (req, res, next) {
-    res.render('404', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message });
+    res.render('404', { Login_status: req.session.Login_status, Error: Error, Error_message: Error_message,User_info:req.session.u_info });
     disable_error();
 });
 

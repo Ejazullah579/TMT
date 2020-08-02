@@ -4,9 +4,9 @@ const app=require('./app');
 const connectdb=require('../database/connection');
 
 
-const port=process.env.port ||3000;
+const PORT=process.env.port ||3000;
 const server=http.createServer(app);
-app.listen(port,()=>{
+app.listen(PORT,()=>{
     console.log("server started");
 });
 connectdb();
