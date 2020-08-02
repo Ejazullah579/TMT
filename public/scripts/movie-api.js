@@ -132,16 +132,16 @@ function getMovie() {
       link=`https://youtube.com/embed/`+`${movie.videos.results[0].key}`+`?autoplay=1`;}
       let output = `
         <div style="padding-bottom:50px;padding-top:30px" class="row">
-          <div class="col-md-4 col-xs-12">
+          <div class="col-md-4 col-xs-12 col-sm-12">
             <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="img-thumbnail">
             <div class="row">
               <div style="padding-bottom:20px;padding-top:15px;padding-left:16px;" class="well">
-                <a id="btn_info" onclick="turnon('${link}')" class="btn-success">Trailar</a>
-                <a id="btn_info" href="/" class="btn-warning">Home</a>
+                <a id="btn_info" onclick="turnon('${link}')" class="btn-success col-sm-12">Trailar</a>
+                <a id="btn_info" href="/" class="btn-warning col-sm-12">Home</a>
               </div>
               </div>
           </div>
-          <div class="col-md-8 col-xs-12 ">
+          <div class="col-md-8 col-xs-12 col-sm-12">
             <h2 style="color:#F1C40F;padding-left:10px;font-size:35px;padding-bottom:10px;font-family: 'Times New Roman', Times, serif;">${m_name}</h2>
             <ul id="movie_details" class="list-group">
               <li id="movie_details_item" class="list-group-item"><strong>Genre: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong>${Genre}</li>
@@ -151,7 +151,7 @@ function getMovie() {
               <li id="movie_details_item" class="list-group-item"><strong>Writer: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong> ${writers}</li>
               <li id="movie_details_item" class="list-group-item"><strong>Actors: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong> ${actors}</li>             
             </ul>
-            <div style="padding-top:20px" class="col-md-12.5 col-xs-12">
+            <div style="padding-top:20px" class="col-md-12.5 col-xs-12 col-sm-12">
               <h2 style="color:#F1C40F;font-size:35px;padding-bottom:10px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">Description</h2>
               <ul id="movie_plot" class="list-group">
                 <li style="line-height: 1.4;padding-bottom:10px;font-size:18px;" class="list-group-item"><strong></strong> ${movie.overview}</li>
