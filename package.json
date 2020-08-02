@@ -4,6 +4,7 @@
   "description": "movie website",
   "main": "/scripts/main.js",
   "scripts": {
+    "start": "node api/server.js" ,
     "server": "nodemon api/server.js"
   },
   "repository": {
@@ -27,6 +28,9 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "nodemon": "^2.0.4"
+  },
+  "engines":{
+    "node": "12.18.1s"
   },
   "devDependencies": {
     
