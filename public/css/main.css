@@ -311,8 +311,11 @@ ul#scene{
     transition: 0.3s;
     text-decoration: none;
 }
-#bp{
-    width: 98%;
+/* #bp{
+  width: 90vw;
+} */
+#bl{
+    padding: 30px;
 }
 .pf-btn{
 
