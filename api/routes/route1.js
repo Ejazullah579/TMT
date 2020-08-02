@@ -1,12 +1,43 @@
-
+const multer =require('multer');
 const express = require('express');
 const router = express.Router();
 const User = require('../schemas/user');
 const { json } = require('body-parser');
 const app = express();
 app.set('view engine', 'ejs');
+
+////////// Global Variables //////
 let Error = 0;
 let Error_message;
+
+/////////// For profile pics ///////////
+
+const storage=multer.diskStorage({
+    destination: function(req,file,cb){
+        cb(null,'./uploads/');
+    },
+    filename: function(req,file,cb){
+        cb(null,file.originalname);
+    }
+});
+
+const fileFilter= (req, file, cb)=>{
+    /// Reject file
+    if(file.mimetype === 'image/jpeg'||file.mimetype === 'image/png'){
+        cb(null,true);
+    }
+    else{
+        cb(null,false);
+    }
+}
+const upload =multer({
+    storage:storage, 
+    limits:{
+    fileSize: 1024 * 1024 * 5
+    },
+    fileFilter:fileFilter
+});
+
 
 
 
@@ -82,7 +113,8 @@ router.post('/get_info', async (req, res, next) => {
                 let User_info={
                     Name:User.first_name+' '+User.last_name,
                     Email:User.email,
-                    User_name:User.user_name
+                    User_name:User.user_name,
+                    Profile_pic:User.profile_pic
                 }
                 req.session.u_info=User_info;
                 disable_error();
@@ -100,26 +132,29 @@ router.post('/get_info', async (req, res, next) => {
 });
 
 //////////// Adding User  /////////////////////
-router.post('/insert', async (req, res, next) => {
+router.post('/insert', upload.single('profile_pic'), async (req, res, next) => {
+    console.log(req.file);
     const req_user_name = req.body.user_name;
     User.findOne({ user_name: req_user_name}).exec()
-    .then(User => {
-        if (User) {
+    .then(Userfound => {
+        if (Userfound) {
             res.status(200);
             enable_error(3,"User name is already Registered");
             res.redirect(req.get('referer'));
         }
         else {
-            const user = new User({
+            let user = new User({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 email: req.body.email,
                 user_name: req.body.user_name,
-                user_password: req.body.user_password
+                user_password: req.body.user_password,
+                profile_pic: req.file.path
             });
+            console.log("Fine Here");
             user.save()
-                .then(result => console.log(result))
-                .catch(err => console.log(err));
+                .then(result => console.log("Here"+result))
+                .catch(err => console.log("There"+err));
             res.status(200);
             enable_error(2,"Account Successfully Created. You can Login Now with your Credentials");
             res.redirect(req.get('referer'));

@@ -8,8 +8,9 @@
     align-items: center;
 }
 .profile_pic{
+    object-fit: cover;
     width: 300px;
-    height: auto;
+    height: 350px;
     border-radius: 30px;
 }
 .name-div{

@@ -514,11 +514,17 @@ footer h1{
             transform: scale(1);
         }
     }
+    .user_thumb{
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+
+    }
 
 /* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-*/
 @media only screen and (max-width: 690px){
     .menu-trigger{
-        background: url('../images/1.jpg') no-repeat center / cover;
         width: 35px;
         height: 35px;
         display: block;

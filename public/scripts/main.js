@@ -19,10 +19,6 @@ $(document).ready(() => {
 
 });
 
-$('.logout').on('click', function () {
-    localStorage.setItem('user_info',0);
-    
-})
 
 $('.login_btn').on('click', function () {
     $('#main-container').css({

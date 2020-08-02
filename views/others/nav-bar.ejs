@@ -48,7 +48,7 @@
           <% if (Login_status==null||Login_status==0||Login_status==undefined) { %>
             <button class="s-btn login_btn">Log in</button>
           <% }else {%>
-            <div class="user "><i class="fa fa-user " id="usericon"></i>
+            <div class="user "><img class="user_thumb" src="<%= User_info.Profile_pic %>" alt="404">
               <ul class="info movie">
                 <li class="user_name movie-item"> Ejazullah</li>
                 <li class="profile movie-item"><a href="/user_profile"> Edit Profile</a></li>

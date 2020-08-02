@@ -20,6 +20,7 @@ app.use(session({
     saveUninitialized:false,
 }));
 app.use('/',userRouter);
+app.use('/uploads',express.static('uploads'));
 app.set('view engine', 'ejs');
 
 
