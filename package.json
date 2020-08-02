@@ -30,7 +30,7 @@
     "nodemon": "^2.0.4"
   },
   "engines":{
-    "node": "12.18.1s"
+    "node": "12.18.1"
   },
   "devDependencies": {
     
