@@ -50,5 +50,10 @@ body{
     display:flex;    
 }
 @media only screen and (max-width: 690px){
-
+    .genre-type{
+        display: block;
+    }
+    .btns{
+        display: block;
+    }
 }

@@ -660,6 +660,8 @@ footer h1{
     #custom-font{
         font-family: 'ethno',sans-serif;
         animation:none ;
+        font-size: 30px;
+        line-height: normal;
       }
   
 }
