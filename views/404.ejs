@@ -16,12 +16,22 @@
 
 <body>
 
-  <!---------- Login Form ----------->
-  <%- include("others/login-form") -%>
-  <!------------ Sign up Form --------->
-  <%- include("others/signup-form") -%>
-  <!----------------End  ----------------->
-  <%- include("others/nav-bar") -%>
+    <% if (Error==1) { %>
+    <%- include("others/messages/Error") -%>
+
+    <%} else if (Error==2) { %>
+    <%- include("others/messages/Success") -%>
+
+    <%} else if (Error==3) { %>
+    <%- include("others/messages/Warning") -%>
+    <% }%>
+
+    <!---------- Login Form ----------->
+    <%- include("others/login-form") -%>
+    <!------------ Sign up Form --------->
+    <%- include("others/signup-form") -%>
+    <!----------------End  ----------------->
+    <%- include("others/nav-bar") -%>
 
     <div class="container mcc">
         <div class="txt-wraper">

@@ -27,7 +27,7 @@ function getMovies(searchText) {
         output += `
           <li onclick="movieSelected('${vall.id}','movie')"  classs="list-group-item" id="list-itemm" >
           <img  src="https://image.tmdb.org/t/p/w500${vall.poster_path}" height="auto" width="100" class="img-thumbnail"
-          />  <span class="text-muted"><h1>${vall.title}</h1></span></li>
+          />  <span class="text-muted"><h1 class="search-res-txt">${vall.title}</h1></span></li>
           `;
           indexx++;}
       });

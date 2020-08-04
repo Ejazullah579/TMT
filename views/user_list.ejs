@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/css/signup.css">
     <link rel="stylesheet" href="/css/user_profile.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/user-list.css">
     <link rel="stylesheet" href="/css/search-box.css">
     <link rel="stylesheet" href="/css/main.css" class="css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>User List</title>
+    <title>User Profile</title>
 </head>
 
 <body>
@@ -24,39 +25,42 @@
         <h1 id="samo">Loading...</h1>
     </div>
     <!-- -------Loading screen end------- -->
+    <% if (Error==1) { %>
+    <%- include("others/messages/Error") -%>
+
+    <%} else if (Error==2) { %>
+    <%- include("others/messages/Success") -%>
+
+    <%} else if (Error==3) { %>
+    <%- include("others/messages/Warning") -%>
+    <% }%>
     <!----------------End  ----------------->
     <%- include("others/nav-bar") -%>
     <!------------------------------------------>
     <!--------------- navigation end --------------->
     <!------------------------------------------>
 
-    <div class="container mc">
+
+    <div class="container name-div">
+        <h1 class="heading-name-text">User List</h1>
+    </div>
+    <div class="container u-m-container">
         <div class="row">
-            <div class="col-md-4 col-xs-12 pf-div">
-                <img class="profile_pic" src=<%= User_info.Profile_pic %> alt="404">
-            </div>
-            <div class="col-md-8 col-xs-12 detail-div">
-                <div class="name-div">
-                    <h1 class="heading">Welcome</h1>
-                    <h1 class="heading-name-text"><%= User_info.Name %></h1>
-                </div>
-                <div class="user-info-div">
-                    <h1 class="heading">User Name</h1>
-                    <h1 class="heading-detail-text"><%= User_info.User_name %></h1>
-                </div>
-                <div class="email-div">
-                    <h1 class="heading">Email</h1>
-                    <h1 class="heading-detail-text"><%= User_info.Email %></h1>
-                </div>
-                <div class="buttons-div">
-                    <button class="edit-pf">Edit Profile Pic</button>
-                    <button class="edit-pf">Edit Profile info</button>
-                    <% if (Admin) { %>
-                        <a style="width: 120px;" href="/get_list" class="edit-pf">Edit Users</a>
-                    <% }%>
-                </div>
-            </div>
+        <!-- ///////////// For Showing User Data -->
+        <% for(var i=0; i<User_data.length; i++) {%>
+        <div class="col-md-3.9 list-group-item container m-s-container m-2 mx-auto">
+                <img class="profile_pic" src=<%= User_data[i].profile_pic %> alt="404">
+                <h1 class="my-2"><%= User_data[i].user_name %> </h1>
+                <h1 class="my-2"><%= User_data[i].email %> </h1>
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="id" value="<%= User_data[i]._id %>">
+                    <button class="btn btn-danger del-btn" type="submit">Delete</button>
+                </form>
+            </li>
         </div>
+        <% } %>
+        <!--//////////////// End  -->
+    </div>
     </div>
 
     <script>

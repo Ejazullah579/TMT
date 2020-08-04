@@ -539,11 +539,33 @@ footer h1{
         top: 15px;
 
     }
+    #list-item1 img:last-of-type,
+    #list-item2 img:last-of-type,
+    #list-item3 img:last-of-type{
+        display: none;
+    }
     #result{
-        margin-top: -270px;
-        margin-left: 170px;
-        width: 40%;
-        max-height: 270px;
+        transform: rotate(-90deg);
+        transform-origin:right top;
+        margin-top: 10px;
+        margin-left: -200px;
+        width: 45%;
+        max-height: 360px;
+        padding-left: 30px;
+        padding-bottom: 30px;    
+    }
+    .search-res-txt{
+        display: none;
+    }
+    #result li{
+        transform: rotate(90deg);
+        transform-origin: right top;
+        background: rgba(0,0,0,0.9);
+        padding: 0;
+        margin: 0;
+    }
+    .text-muted{
+        display: none;
     }
     nav ul .listt:hover{
         box-shadow:none;
@@ -605,14 +627,7 @@ footer h1{
         top: 15px;
         z-index:20;
     }
-    #result li{
-        background: rgba(0,0,0,0.4);
-        margin-top: 3px;
-        padding:5px;
-        display:flex;
-        justify-content:space-around;
-        z-index:1000;
-       }
+
        #result li:hover{
            z-index: 2;
            border-radius: 10px;
@@ -627,19 +642,16 @@ footer h1{
     }
 
     .user_info{
+        width: 40%;
         margin-top: -30px;
-        margin-left: 390px;
+        margin-left: 240px;
     }
     .user .movie{
         padding-bottom: 10px;
     }
     .user_info:hover .movie{
-        transition: 0.8s ease-in-out;
-        margin-left: -93px;
+        margin-left: -60px;
         margin-top: -180px;
-            position: absolute;
-            display: block;
-            height: auto;
     }
     .login_btn{
         margin-left: -45px;

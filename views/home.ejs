@@ -24,7 +24,7 @@
 <body>
   <!-- -------Loading screen------- -->
   <div class="loading_screen">
-    <svg>
+    <svg class="cir-svg">
       <circle cx="70" cy="70" r="70"></circle>
     </svg>
     <h1 id="samo">Loading...</h1>
@@ -135,7 +135,7 @@
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     setTimeout(function () {
-      $('.loading_screen').css("display", "none");
+      $('.loading_screen').remove();
     }, 1500)
   </script>
   <script>
