@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
 
 const fileFilter = (req, file, cb) => {
     /// Reject file
-    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png'||file.mimetype === 'image/jpg') {
         cb(null, true);
     }
     else {
@@ -146,9 +146,13 @@ router.post('/get_info', async (req, res, next) => {
                 res.status(200);
                 req.session.Login_status = 1;
                 let User_info = {
+                    Id:User._id,
+                    First_name:User.first_name,
+                    Last_name:User.last_name,
                     Name: User.first_name + ' ' + User.last_name,
                     Email: User.email,
                     User_name: User.user_name,
+                    User_password: User.user_password,
                     Profile_pic: User.profile_pic
                 }
                 req.session.u_info = User_info;
@@ -157,7 +161,7 @@ router.post('/get_info', async (req, res, next) => {
                     if(Admin[i].user_name==req_user_name&&Admin[i].user_password==req_user_password){
                     req.session.admin=true;
                     console.log("Admin Logged in");
-                    break;}
+                    }
                 }
                 /////////////// End/////////////
                 
@@ -216,6 +220,46 @@ router.post('/delete', async (req, res, next) => {
     console.log("User successfully deleted");
     enable_error(2, "User successfuly Deleted");
     res.redirect('/get_list');
+});
+//////////// Update User settings
+router.post('/update', upload.single('profile_pic'), async (req, res, next) => {
+    let pf='';
+    if(req.file!=undefined){
+        pf=req.file.path;
+    }
+    else{
+        pf=req.session.u_info.Profile_pic;
+    }
+    let user = new User({
+        _id:req.body.id,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        email: req.body.email,
+        user_name: req.body.user_name,
+        user_password: req.body.user_password,
+        profile_pic: pf
+    });
+    const data = req.body.id;
+    User.updateOne({ _id: data },{$set:user},function(err,result){
+        if(err)
+        console.log("Update Route"+err);
+        console.log("User successfully updates");
+    });
+    ////////// Setting info for user profile
+    let User_info = {
+        Id:req.body._id,
+        First_name:req.body.first_name,
+        Last_name:req.body.last_name,
+        Name: req.body.first_name + ' ' + req.body.last_name,
+        Email: req.body.email,
+        User_name: req.body.user_name,
+        User_password: req.body.user_password,
+        Profile_pic: pf
+    }
+    console.log("pf val: "+pf);
+    req.session.u_info = User_info;
+    enable_error(2,"User information successfuly updated");
+    res.redirect("/user_profile");
 });
 
 

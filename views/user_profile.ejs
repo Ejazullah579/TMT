@@ -24,6 +24,16 @@
         <h1 id="samo">Loading...</h1>
     </div>
     <!-- -------Loading screen end------- -->
+    <% if (Error==1) { %>
+    <%- include("others/messages/Error") -%>
+
+    <%} else if (Error==2) { %>
+    <%- include("others/messages/Success") -%>
+
+    <%} else if (Error==3) { %>
+    <%- include("others/messages/Warning") -%>
+    <% }%>
+    <%- include("others/update-form") -%>
     <!----------------End  ----------------->
     <%- include("others/nav-bar") -%>
     <!------------------------------------------>
@@ -49,10 +59,9 @@
                     <h1 class="heading-detail-text"><%= User_info.Email %></h1>
                 </div>
                 <div class="buttons-div">
-                    <button class="edit-pf">Edit Profile Pic</button>
-                    <button class="edit-pf">Edit Profile info</button>
+                    <button onclick="showsignupform()" class="edit-pf edit-pf-btn ">Edit Profile info</button>
                     <% if (Admin) { %>
-                        <a style="width: 120px;" href="/get_list" class="edit-pf">Edit Users</a>
+                    <a style="width: 120px;" href="/get_list" class="edit-pf">Edit Users</a>
                     <% }%>
                 </div>
             </div>

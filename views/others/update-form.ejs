@@ -5,31 +5,32 @@
         <div style="height: 20px;">
             <i onclick="hidesignupform()" class="fa fa-times c-icon"></i>
         </div>
-        <form action="/insert" method="POST" class="" id="Sign-up" enctype="multipart/form-data">
+        <form action="/update" method="POST" class="" id="Sign-up" enctype="multipart/form-data">
             <div class="row form-row">
                 <div class="col-md-5 col-sm-3 sel_pic">
-                    <input class="form-control-file select_img" accept=".jpg,.png,.jpeg" type="file" name="profile_pic" id="" required>
+                    <input class="form-control-file select_img" accept=".jpg,.png,.jpeg" type="file" name="profile_pic" id="" value="./<%= User_info.Profile_pic %>">
                 </div>
                 <div class="col colum2">
                     <h2 class="form_title">
-                        Complete the Following Fields for Registration
+                        Only Change those fields which you want to change
                     </h2>
                     <div style="padding: 0;" class="row fl_info no-gutters">
                         <div class="col col11">
                             <input class="form-control first_name" type="text" name="first_name"
-                                placeholder="First Name" required autocomplete="off">
+                                placeholder="First Name" autocomplete="off" value="<%= User_info.First_name %>">
                         </div>
                         <div class="col">
                             <input class="form-control last_name" type="text" name="last_name" placeholder="Last Name"
-                                required autocomplete="off">
+                                 autocomplete="off" value="<%= User_info.Last_name %>">
                         </div>
                     </div>
-                    <input class="form-control email" type="email" name="email" placeholder="Email Address" required>
-                    <input class="form-control user_name" type="text" name="user_name" placeholder="User Name" required
-                        autocomplete="off" minlength="6">
+                    <input class="form-control email" type="email" name="email" placeholder="Email Address"  value="<%= User_info.Email %>">
+                    <input class="form-control user_name" type="text" name="user_name" placeholder="User Name"
+                        autocomplete="off" minlength="6" value="<%= User_info.User_name %>">
                     <input class="form-control password_name" type="password" name="user_password"
-                        placeholder="Password  must include    A-Z,a-z,1-9,*-@" required autocomplete="off"
-                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}">
+                        placeholder="Password  must include    A-Z,a-z,1-9,*-@" autocomplete="off"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" value="<%= User_info.User_password %>">
+                        <input class="form-control email" type="hidden" name="id"  value="<%= User_info.Id %>">
                     <input class="form-control s-btn" type="submit" value="Submit" autocomplete="off">
                 </div>
             </div>
