@@ -90,7 +90,7 @@ router.get('/404', function (req, res, next) {
 router.get('/user_profile', function (req, res, next) {
     if (req.session.Login_status == 1) {
         res.render('user_profile', { Login_status: req.session.Login_status, Error: Error,
-             Error_message: Error_message,Admin:req.session.admin, User_info: req.session.u_info });
+             Error_message: Error_message,Admins:req.session.admin, User_info: req.session.u_info });
         disable_error();
     }
     else {
@@ -110,6 +110,7 @@ router.get('/user_list', function (req, res, next) {
 });
 
 router.get('/logout', function (req, res, next) {
+    req.session.admin=false;
     req.session.Login_status = 0;
     req.session.u_info = null;
     if (req.get('referer') == "http://localhost:3000/user_profile") {
