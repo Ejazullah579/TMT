@@ -1,22 +1,17 @@
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
 
-$(document).ready(() => {
-    // let shit=async function(){
-    //      await getvarvalue();
-    // };
-    // shit();
-    // console.log("user_info:"+user_info);
-    // if (user_info == 0||user_info==null||user_info==undefined) {
-    //     // var item = `<button class="s-btn login_btn">Log in</button>`;
-    //     // $('.user_info').html(item);
-    //     $('.s-btn').css("display","block");
-    //     $('.user').css("display","none");
-    // }
-    // if(user_info==1){
-    //     $('.user').css("display","block");
-    //     $('.s-btn').css("display","none");
-    // }
-    // console.log('User-info:'+user_info);
+        reader.onload = function (e) {
+            $('.pf_img').attr('src', e.target.result);
+        }
 
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+$(".select_img").change(function(){
+    readURL(this);
 });
 
 
