@@ -6,6 +6,8 @@ const { json } = require('body-parser');
 const { response } = require('express');
 const app = express();
 app.set('view engine', 'ejs');
+const nodemailer = require("nodemailer");
+const { resolveNaptr } = require("dns");
 
 ////////// Global Variables //////
 let Error = 0;
@@ -182,7 +184,16 @@ router.post('/get_info', async (req, res, next) => {
 
 //////////// Adding User  /////////////////////
 router.post('/insert', upload.single('profile_pic'), async (req, res, next) => {
-    console.log(req.file);
+    let image;
+    if(req.file){
+        console.log(req.file);
+        image=req.file.path;
+        enable_error(2, "Account Successfully Created. You can Login Now with your Credentials");
+    }
+    else{
+        enable_error(3,"Account created but Picture format not supported");
+        image="/images/demo.png";
+    }
     const req_user_name = req.body.user_name;
     User.findOne({ user_name: req_user_name }).exec()
         .then(Userfound => {
@@ -198,14 +209,13 @@ router.post('/insert', upload.single('profile_pic'), async (req, res, next) => {
                     email: req.body.email,
                     user_name: req.body.user_name,
                     user_password: req.body.user_password,
-                    profile_pic: req.file.path
+                    profile_pic: image
                 });
                 console.log("Fine Here");
                 user.save()
                     .then(result => console.log("Here" + result))
                     .catch(err => console.log("There" + err));
                 res.status(200);
-                enable_error(2, "Account Successfully Created. You can Login Now with your Credentials");
                 res.redirect(req.get('referer'));
             }
         })
@@ -262,6 +272,92 @@ router.post('/update', upload.single('profile_pic'), async (req, res, next) => {
     enable_error(2,"User information successfuly updated");
     res.redirect("/user_profile");
 });
+
+////////////////// For sending Contact Form info
+let transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+        user: "quizprojekt12345@gmail.com",
+        pass: "helloTest047"
+    }
+});
+
+router.post("/contact-info", (req, res) => {
+    const from = req.body.first_name+req.body.last_name;
+    const email = req.body.email;
+    const subject = req.body.subject;
+    console.log(subject);
+    let text = req.body.message;
+    text = text + "\nFrom: " + email;
+    sendMail(from, email, subject, text);
+    enable_error(2,"Mail successfully sent! Thank you for your valuable time");
+    res.redirect('/about_us');
+});
+
+function sendMail(name, email, type, message){
+    let mailOptions = {
+        from: name+ "<quizprojekt12345@gmail.com>",
+        to: "quizprojekt54321@gmail.com",
+        subject: type,
+        text: message
+    }
+    
+    transporter.sendMail(mailOptions, function(err, data){
+        if(err){
+            console.log(err);
+        }else{
+            console.log("Sent Email");
+        }
+    });
+}
+
+
+// Mailchimp Api Subscription List Code
+
+function subscbribeUser(fName, lName, mail){
+    const firstName = fName;
+    const lastName = lName;
+    const emailAddress = mail;
+
+    // Mailchimp accepts data in this format so gotta convert
+    const data = {
+        members: [
+            {
+                email_address: emailAddress,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: firstName,
+                    LNAME: lastName
+                }
+            }
+        ]
+    };
+
+    // Convert the js object into JSON
+    const jsonData = JSON.stringify(data);
+
+    const url = "https://us10.api.mailchimp.com/3.0/lists/26a1251777";
+
+    // Options for making a POST request, including API KEY (AUTHENTICATION)    
+    const options = {
+        method: "POST",
+        auth: "cyanide:dcfbc68776f3258cc456392da2c82a81-us10"
+    }
+
+    const request = https.request(url, options, function (response) {
+        if (response.statusCode === 200)
+            console.log("Sent Welcome");
+        else {
+            console.log("Mailchimp failed");
+        }
+        response.on("data", function (data) {
+            console.log(JSON.parse(data));
+        })
+    });
+
+    request.write(jsonData);
+    request.end();
+};
 
 
 module.exports = router;

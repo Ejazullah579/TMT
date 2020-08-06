@@ -22,6 +22,11 @@
     padding: 15px !important;
     padding-right: 50px !important;
 }
+.pf_img{
+    border-radius: 10px;
+    width: 250px;
+    height: 250px;
+}
 .form_title{
     text-align: center;
     padding-left: 10px;
@@ -66,9 +71,7 @@
     margin-left: 55px !important;
     margin-top: 30px !important;
 }
-.select_img{
- 
-}
+
 .s-btn:not(:hover){
     transition: 0.3s ease-in-out;
     border: none;
@@ -102,6 +105,9 @@
             padding-right:5% !important;
             padding-top: 2%;  
         }
+        .form_title{
+            display: none;
+        }
         .s-container{
             margin-top: 20px;
             padding:8px;
@@ -110,10 +116,16 @@
         }
         .select_img{
             padding-top: 10%;
-            padding-left: 50px; 
+            padding-left: 0px; 
         }
         .sel_pic{
             margin-top: 0px !important;
+            text-align: center;
+        }
+        .pf_img{
+            margin-left: -60px;
+            width: 150px;
+            height: 150px;
         }
 }
 @media only screen and (min-width:691px) and (max-width: 1024px){

@@ -44,6 +44,8 @@ function hidesignupform() {
         "transform": "translate(1600px)",
         "transition": "1s ease-in-out"
     });
+    $('.pf_img').attr("src", "/images/demo.png");
+    $('#Sign-up').trigger("reset");
 }
 
  async function getvarvalue(){
