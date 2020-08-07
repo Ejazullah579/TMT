@@ -62,13 +62,14 @@
     }
     .search-box:hover > .search-text{
         transition: 0.3 ease-in-out;
-        width: 130px;
+        width: 140px;
         padding: 0 6px;
         z-index:1;
     }
     .search-box:not(:hover)> #result{
         transition: 0.5 ease-in-out;
         margin-top: 0px;
+        width: 0px;
         height: 0px;
     }
     .search-box:not(:hover) > .search-text{
