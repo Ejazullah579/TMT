@@ -70,7 +70,16 @@
    .img-thumbnail{
       width: 150px;
    }
-   #crew li:last-of-type{
+   #crew {
+      text-align: center;
+   }
+   #imagess{
+      text-align: center;
+   }
+   .head-text{
+      padding-left: 50px !important;
+   }
+   #crew li:nth-last-of-type(5){
       display: none;
    }
    #content{
