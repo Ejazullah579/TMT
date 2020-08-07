@@ -544,6 +544,10 @@ footer h1{
     #list-item3 img:last-of-type{
         display: none;
     }
+    .c-down{
+        text-align: center;
+        font-size: 25px;
+    }
     #result{
         transform: rotate(-90deg);
         transform-origin:right top;

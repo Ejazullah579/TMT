@@ -8,6 +8,7 @@
     }
   </style>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MovieInfo</title>
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -49,7 +50,7 @@
   <%- include("others/nav-bar") -%>
   <!---------Trailor Overlay ------->
   <div class="p-xs-5 m-xs-5" onclick="turnoff()" id="overlay">
-    <div style="height: 80%;" id="content"></div>
+    <div class="m-auto" style="height: 80%;" id="content"></div>
   </div>
   </div>
   <!----------- end ------------->
@@ -58,14 +59,14 @@
   </div>
   <div class="container">
     <div class="row ">
-      <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
+      <h2 class="m-auto" style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
         Leading rolls</h2>
       <ul style="display: inline;" id="crew" class="list-group col-xs-12 col-sm-12">
       </ul>
     </div>
   
-    <div class="row col-xs-12 ">
-      <h2 style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
+    <div class="row col-xs-12 pure">
+      <h2 class="m-auto" style="font-size:35px;padding-bottom:20px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">
         Images</h2>
       <ul style="display: inline;" id="imagess" class="list-group">
       </ul>

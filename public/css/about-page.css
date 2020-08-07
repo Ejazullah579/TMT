@@ -157,3 +157,16 @@ section.beating-heart span{
         
     }
 }
+@media only screen and (max-width: 690px){
+    #about{
+        padding-top: 65px;
+    }
+    #about-sub-title{
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+    #sub-para{
+        text-align: justify;
+    }
+}
+

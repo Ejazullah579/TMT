@@ -125,3 +125,30 @@ body{
   bottom  : 100%;
  }
 }
+@media only screen and (max-width: 690px){
+
+    .btns a span{
+        position: relative;
+    }
+
+    .btns a{
+        position: relative;
+    }
+
+    .btns a span:nth-child(1){
+      display: none;
+      animation: none; 
+    }
+    .btns a span:nth-child(2){
+      display: none;
+      animation: none; 
+     }
+     .btns a span:nth-child(3){
+      display: none;
+      animation: none; 
+     }
+     .btns a span:nth-child(4){
+      display: none;
+      animation: none; 
+     }
+}

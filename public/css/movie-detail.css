@@ -67,7 +67,22 @@
    #content{
       display: block;
    }
+   .img-thumbnail{
+      width: 150px;
+   }
+   #crew li:last-of-type{
+      display: none;
+   }
+   #content{
+      transform: translate(0, 0) ;
+   }
+   #frame{
+      margin-top: 40%;
+      margin-left: 10%;
+      height: 60%;
+      width: 80%;
+   }
    #btn_info{
-      display: inline-block;
+      padding:7px 55px 7px 55px;
    }
 }

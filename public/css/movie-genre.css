@@ -55,5 +55,12 @@ body{
     }
     .btns{
         display: block;
+        margin-top: 30px;  
+    }
+    .genre-type-text{
+        text-align: center;
+    }
+    .ul-main{
+        text-align: center;
     }
 }
