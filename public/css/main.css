@@ -539,6 +539,9 @@ footer h1{
         top: 15px;
 
     }
+    #custom-font{
+        overflow: hidden;
+    }
     #list-item1 img:last-of-type,
     #list-item2 img:last-of-type,
     #list-item3 img:last-of-type{
