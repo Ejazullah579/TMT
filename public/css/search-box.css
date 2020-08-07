@@ -60,7 +60,7 @@
     .search-text{
         width: 90px;
     }
-    #searchText:focus{
+    #searchText:focus+#result{
         background: black;
     }
     .search-box:hover > .search-text{
