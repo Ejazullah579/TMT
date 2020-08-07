@@ -538,6 +538,18 @@ footer h1{
         top: 15px;
 
     }
+    .txt-wraper{
+        animation: none;
+    }
+    .primary-t,.secondry-t{
+        animation: none;
+    }
+    .primary-t{
+        font-size: 70px;
+    }
+    .secondry-t{
+        font-size: 30px;
+    }
     #list-item1 img:last-of-type,
     #list-item2 img:last-of-type,
     #list-item3 img:last-of-type{
