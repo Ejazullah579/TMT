@@ -589,10 +589,10 @@ footer h1{
         font-size: 19px;
         font-weight: 700;
         text-decoration: none;
-        color: black;
+        color: orangered;
     }
     .listt{
-        padding: 10px;
+        padding: 5px;
         padding-left: 20px;
         width: 25%;
     }

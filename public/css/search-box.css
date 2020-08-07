@@ -60,6 +60,9 @@
     .search-text{
         width: 90px;
     }
+    #searchText:focus{
+        position: fixed;
+    }
     .search-box:hover > .search-text{
         transition: 0.3 ease-in-out;
         width: 95px;
