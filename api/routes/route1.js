@@ -18,8 +18,8 @@ let Admin = [
         user_password: "Ejazullah@0000"
     },
     {
-        user_name: "ejazuulah579",
-        user_password: "Ejazullah@0000"
+        user_name: "rawail6",
+        user_password: "Topmedia1234"
     },
     {
         user_name: "ejazuulah579",
@@ -115,7 +115,7 @@ router.get('/logout', function (req, res, next) {
     req.session.admin=false;
     req.session.Login_status = 0;
     req.session.u_info = null;
-    if (req.get('referer') == "http://localhost:3000/user_profile") {
+    if (req.get('referer').includes('user_list')||req.get('referer').includes('user_profile')) {
         res.redirect('/');
     }
     else {
