@@ -576,7 +576,7 @@ footer h1{
         transform: rotate(90deg);
         transform-origin: right top;
         background: rgba(50,19,33,1);
-        padding: 0 20px;
+        padding: 10px 20px;
         margin: 0;
     }
     .text-muted{
