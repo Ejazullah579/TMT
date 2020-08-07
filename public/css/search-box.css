@@ -62,7 +62,7 @@
     }
     .search-box:hover > .search-text{
         transition: 0.3 ease-in-out;
-        width: 80%;
+        width: 90%;
         padding: 0 6px;
         z-index:1;
     }
