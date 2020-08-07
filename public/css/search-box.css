@@ -54,18 +54,15 @@
 }
 @media only screen and (max-width: 690px){
     .search-box{
-        width: 40%;
+        width: 50%;
         height: 30px;
     }
     .search-text{
-        width: 90px;
-    }
-    #searchText:focus+#result{
-        background: black;
+        width: 120px;
     }
     .search-box:hover > .search-text{
         transition: 0.3 ease-in-out;
-        width: 95px;
+        width: 130px;
         padding: 0 6px;
         z-index:1;
     }
