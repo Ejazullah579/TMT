@@ -315,7 +315,7 @@ ul#scene{
   width: 90vw;
 } */
 #bl{
-    padding: 30px;
+    
 }
 .pf-btn{
 
@@ -558,6 +558,9 @@ footer h1{
     .c-down{
         text-align: center;
         font-size: 25px;
+    }
+    .spr-img{
+        
     }
     #result{
         transform: rotate(-90deg);
