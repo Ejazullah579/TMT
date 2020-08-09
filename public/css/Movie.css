@@ -80,3 +80,9 @@
   #c-heading:hover,#c-heading:hover,#M-heading:hover{
     color: orange;
 }
+@media only screen and (max-width: 690px){
+
+    #M-heading,#c-heading{
+        text-align: center;
+    }
+}
