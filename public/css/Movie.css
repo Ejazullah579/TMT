@@ -11,7 +11,6 @@
 }
 .swiper-wrapper{
     height:100%;
-    z-index:0;
 }
 .ul-main{
     width: 100%;
@@ -26,6 +25,9 @@
 #c-heading{
     padding-top:10px;
  }
+.ml-cont{
+    padding-top: 50px;
+}
  .swiper-slide {
      z-index: 2;
     text-align: center;
@@ -44,7 +46,7 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    
+    overflow: hidden;
   }
   .m-slide{
     background: rgb(0, 0, 0, 0.3);
