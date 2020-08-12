@@ -18,30 +18,55 @@ $(".select_img").change(function(){
 
 $('.login_btn').on('click', function () {
     $('#main-container').css({
+        "opacity" : "1",
         "transform": "translate(0px)",
         "transition": "1s ease-in-out",
     });
     
 })
+
+function hidepostform() {
+    $('.post-m-container').css({
+        "opacity" : "0",
+        "transform": "translate(-1600px)",
+        "transition": "1s linear"
+    });
+}
+
+function showpostform() {
+    $('.post-m-container').css({
+        "opacity" : "1",
+        "transform": "translate(-0px)",
+        "transition": "1s linear"
+    });
+    $('.pf_img').attr("src", "/images/demo.png");
+    $('#Post-form').trigger("reset");
+}
+
+
 function hideloginform() {
     $('#main-container').css({
+        "opacity" : "0",
         "transform": "translate(-1600px)",
         "transition": "1s linear"
     });
 }
 function showsignupform() {
     $('#main-container').css({
+        "opacity" : "0",
         "transform": "translate(-1600px)",
         "transition": "1s linear"
     });
 
     $('.m-container').css({
+        "opacity" : "1",
         "transform": "translate(0px)",
         "transition": "0.8s ease-in-out"
     });
 }
 function hidesignupform() {
     $('.m-container').css({
+        "opacity" : "0",
         "transform": "translate(1600px)",
         "transition": "1s ease-in-out"
     });

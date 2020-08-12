@@ -1,4 +1,5 @@
-.m-container{
+.m-container,.post-m-container{
+    opacity: 0;
     transform: translate(1600px);
     height: 100vh !important;
     width: 100vw !important;
@@ -100,7 +101,7 @@
 
 @media only screen and (max-width: 690px){
 
-        .m-container{
+        .m-container,.post-m-container{
             padding-left: 5% !important;
             padding-right:5% !important;
             padding-top: 2%;  
@@ -129,7 +130,7 @@
         }
 }
 @media only screen and (min-width:691px) and (max-width: 1024px){
-    .m-container{
+    .m-container,.post-m-container{
         padding-left: 5% !important;
         padding-right:5% !important;
         padding-top: 2%;  

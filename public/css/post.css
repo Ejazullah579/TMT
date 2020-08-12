@@ -1,0 +1,81 @@
+.super-container{
+    padding-top: 150px !important;
+}
+.user_info_div{
+    padding-top: 35px;
+    text-align: center;
+}
+.second-group{
+    padding-top: 40px;
+}
+.profile-img{
+    height: 100px;
+    width: 100px;
+    border-radius: 80px;
+    text-align: center;
+    object-fit: cover;
+    border: 2px solid white;
+    transition: 0.5s ease-in-out;
+}
+.profile-img:hover{
+    box-shadow: 0 0 10px 2px white;
+    transform: scale(1.2);
+}
+.profile-img:hover+.user-data{
+    opacity: 1;
+    text-shadow:0px 3px 2px dodgerblue;
+}
+.user-data{
+    text-align: center;
+    padding-top: 10px;
+    opacity: 0.6;
+    transition: 0.5s ease-in-out;
+}
+.post_info_div{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.post-img{
+    width: inherit;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid white;
+}
+.subject{
+    font-family: 'ethno';
+    color: white;
+    font-size: 35px;
+    font-weight: 800;
+    padding: 15px;
+    opacity: 0.9;
+    padding-left: 20px;
+}
+.content{
+    padding: 15px 10px;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: 200;
+    padding-bottom: 50px;
+    opacity: 0.8;
+    white-space: pre-line;
+}
+@media only screen and (max-width: 690px){
+    .content{
+        padding: 15px 10px;
+    }
+    .subject{
+        text-align: center;
+        font-size: 22px;
+        padding-bottom: 20px;
+    }
+    .post-img{
+        width: inherit;
+        height: 300px;
+        border: none;
+        object-fit: cover;
+        border-radius: 25px;
+        padding:0 20px;
+    }
+
+}

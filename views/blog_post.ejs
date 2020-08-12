@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/loading.css">
     <link rel="stylesheet" href="/css/signup.css">
-    <link rel="stylesheet" href="/css/user_profile.css">
     <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/post.css">
     <link rel="stylesheet" href="/css/search-box.css">
     <link rel="stylesheet" href="/css/main.css" class="css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>User List</title>
+    <title>Post</title>
 </head>
 
 <body>
@@ -33,42 +33,31 @@
     <%} else if (Error==3) { %>
     <%- include("others/messages/Warning") -%>
     <% }%>
-    <%- include("others/update-form") -%>
-    <%- include("others/post-form") -%>
     <!----------------End  ----------------->
     <%- include("others/nav-bar") -%>
     <!------------------------------------------>
     <!--------------- navigation end --------------->
     <!------------------------------------------>
 
-    <div class="container mc">
+    <div class="container super-container">
         <div class="row">
-            <div class="col-md-4 col-xs-12 pf-div">
-                <img class="profile_pic" src=<%= User_info.Profile_pic %> alt="404">
+            <div class="col-md-12 post_info_div">  
+                <h1 class="subject"><%= SP_data.Subject %></h1>  
+                <img class="post-img " src="<%= SP_data.Post_pic %>" alt="">
             </div>
-            <div class="col-md-8 col-xs-12 detail-div">
-                <div class="name-div">
-                    <h1 class="heading">Welcome</h1>
-                    <h1 class="heading-name-text"><%= User_info.Name %></h1>
-                </div>
-                <div class="user-info-div">
-                    <h1 class="heading">User Name</h1>
-                    <h1 class="heading-detail-text"><%= User_info.User_name %></h1>
-                </div>
-                <div class="email-div">
-                    <h1 class="heading">Email</h1>
-                    <h1 class="heading-detail-text"><%= User_info.Email %></h1>
-                </div>
-                <div class="buttons-div">
-                    <button onclick="showsignupform()" class="edit-pf edit-pf-btn ">Edit Profile info</button>
-                    <button onclick="showpostform()" class="edit-pf edit-pf-btn ">Write Post</button>
-                    <% if (Admins) { %>
-                    <a style="width: 120px;" href="/get_list" class="edit-pf">Edit Users</a>
-                    <% }%>
-                </div>
+        </div>
+        <div class="row second-group">
+            <div class="col-md-3 user_info_div order-md-2 ">
+                <img class="profile-img " src="<%= SP_data.Profile_pic %>" alt="">
+                <h1 class="user-data"><%= SP_data.User_name %></h1>
+                <h1 class="user-data"><%= SP_data.Publish_date %></h1>
+            </div>
+            <div class="col-md-9 order-md-1">
+                <h1 class="content"><%= SP_data.Content %></h1> 
             </div>
         </div>
     </div>
+
 
     <script>
         setTimeout(function () {

@@ -314,9 +314,7 @@ ul#scene{
 /* #bp{
   width: 90vw;
 } */
-#bl{
-    
-}
+
 .pf-btn{
 
     margin: 0 auto;
@@ -558,9 +556,6 @@ footer h1{
     .c-down{
         text-align: center;
         font-size: 25px;
-    }
-    .spr-img{
-        
     }
     #result{
         transform: rotate(-90deg);

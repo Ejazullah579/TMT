@@ -1,5 +1,6 @@
 .main-container{
     transform: translate(-1600px);
+    opacity: 0;
     height: 100vh !important;
     width: 100vw !important;
     position: fixed; 

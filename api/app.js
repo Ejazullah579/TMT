@@ -21,6 +21,7 @@ app.use(session({
 }));
 app.use('/',userRouter);
 app.use('/uploads',express.static('uploads'));
+app.use('/posts',express.static('posts'));
 app.set('view engine', 'ejs');
 
 

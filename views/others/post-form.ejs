@@ -1,0 +1,32 @@
+<!------------ Sign up Form --------->
+
+<div class="post-m-container">
+    <div class="container s-container">
+        <div style="height: 20px;">
+            <i onclick="hidepostform()" class="fa fa-times c-icon"></i>
+        </div>
+        <form action="/post/insert" method="POST" class="" id="Post-form" enctype="multipart/form-data">
+            <div class="row form-row">
+                <div class="col-md-5 col-sm-12 sel_pic">
+                    <img style="object-fit: cover;" src="/images/demo.png"  alt="Profile_pic" class="pf_img ">
+                    <input class="form-control-file select_img" accept=".jpg,.png,.jpeg" type="file" name="post_pic" id="" required>
+                </div>
+                <div class="col colum2">
+                    <h2 class="form_title">
+                        Complete the Following Fields for Posting
+                    </h2>
+                    <input class="form-control subject" type="text" name="subject" placeholder="Subject" required minlength="20" maxlength="60"><br>
+                    <input class="form-control subject" type="hidden" name="user_name" value="<%= User_info.User_name %>">
+                    <input class="form-control subject" type="hidden" name="profile_pic" value="<%= User_info.Profile_pic %>">
+                    <textarea style="margin-left: 10px !important;height: 150px;" class="form-control msg" name="content" rows="10" cols="30" placeholder="Message"
+                        required minlength="120"></textarea><br>
+                    <input class="form-control s-btn" type="submit" value="Post" autocomplete="off">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+<!--------------- End  ---------------->
