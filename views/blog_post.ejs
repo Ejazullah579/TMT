@@ -34,6 +34,11 @@
     <%- include("others/messages/Warning") -%>
     <% }%>
     <!----------------End  ----------------->
+    <!---------- Login Form ----------->
+    <%- include("others/login-form") -%>
+    <!------------ Sign up Form --------->
+    <%- include("others/signup-form") -%>
+    <!----------------End  ----------------->
     <%- include("others/nav-bar") -%>
     <!------------------------------------------>
     <!--------------- navigation end --------------->
@@ -41,8 +46,8 @@
 
     <div class="container super-container">
         <div class="row">
-            <div class="col-md-12 post_info_div">  
-                <h1 class="subject"><%= SP_data.Subject %></h1>  
+            <div class="col-md-12 post_info_div">
+                <h1 class="subject"><%= SP_data.Subject %></h1>
                 <img class="post-img " src="<%= SP_data.Post_pic %>" alt="">
             </div>
         </div>
@@ -53,7 +58,7 @@
                 <h1 class="user-data"><%= SP_data.Publish_date %></h1>
             </div>
             <div class="col-md-9 order-md-1">
-                <h1 class="content"><%= SP_data.Content %></h1> 
+                <h1 class="content"><%= SP_data.Content %></h1>
             </div>
         </div>
     </div>
