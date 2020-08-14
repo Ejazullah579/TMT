@@ -151,10 +151,10 @@ function getMovie() {
               <li id="movie_details_item" class="list-group-item"><strong>Writer: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong> ${writers}</li>
               <li id="movie_details_item" class="list-group-item"><strong>Actors: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </strong> ${actors}</li>             
             </ul>
-            <div style="padding-top:20px" class="col-md-12.5 col-xs-12 col-sm-12">
-              <h2 style="color:#F1C40F;font-size:35px;padding-bottom:10px;padding-left:10px;font-family: 'Times New Roman', Times, serif;">Description</h2>
+            <div style="padding-top:20px" class="plot-div col-md-12 col-xs-12 col-sm-12">
+              <h2 class="movie-detail-section" >Description</h2>
               <ul id="movie_plot" class="list-group">
-                <li style="line-height: 1.4;padding-bottom:10px;font-size:18px;" class="list-group-item"><strong></strong> ${movie.overview}</li>
+                <li style="line-height: 1.4;padding-bottom:10px;font-size:18px;" class="list-group-item text-justify"><strong></strong> ${movie.overview}</li>
               </ul>
             </div>
           </div>  

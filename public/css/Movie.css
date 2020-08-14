@@ -24,6 +24,7 @@
   }
 #c-heading{
     padding-top:10px;
+    width:15%;
  }
 .ml-cont{
     padding-top: 50px;
@@ -60,6 +61,10 @@
   }
   .c-down{
       margin-left: 15px;
+      color: white !important;
+  }
+  .c-down:hover{
+      color: orange !important;
   }
   .containers{
       width: 100%;

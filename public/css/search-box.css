@@ -1,8 +1,8 @@
 .search-box{
-    margin-bottom: -12px;
+    margin-bottom: -7px;
     margin-right: 3px;
     margin-left: 0;
-    height:20px;
+    height:30px;
     border-radius: 40px;
     padding: 8px;  
     background: #2f3640;  
@@ -55,7 +55,7 @@
 @media only screen and (max-width: 690px){
     .search-box{
         width: 100%;
-        height: 30px;
+        height: 30px !important;
     }
     .search-text{
         width: 110px;

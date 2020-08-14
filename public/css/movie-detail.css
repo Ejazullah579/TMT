@@ -20,6 +20,7 @@
 #movie_details {
    box-shadow: 0 0 10px 5px black;
    border-radius:10px;
+   background: rgb(3, 10, 25) !important;
    border-top:5px solid #E74C3C;
    border-bottom:5px solid #E74C3C;
    transition:0.3s ease-in-out;
@@ -28,15 +29,19 @@
    border-top:1px solid #E74C3C;
    border-bottom:9px solid #E74C3C;
 }
-#movie_plot {
-   
+#movie_plot { 
+   width: 105%;
    border-radius:10px;
-   border-left:10px solid #E74C3C;
+   box-shadow: 0 0 10px 5px black;
+   border-radius:10px;
+   background: rgb(3, 10, 25) !important;
+   border-top:5px solid #E74C3C;
+   border-bottom:5px solid #E74C3C;
    transition:0.3s ease-in-out;
 }
 #movie_plot:hover{
-   box-shadow: 0 0 10px 5px black;
-   border-left:1px solid #E74C3C;
+   border-top:1px solid #E74C3C;
+   border-bottom:9px solid #E74C3C;
 }
 #crew_images,#movie_images{
    display:inline;
@@ -58,6 +63,26 @@
    display:inline;
    transition:0.6s ease-in-out;
 }
+.head-text{
+   font-size:35px;
+   padding-bottom:20px;
+   padding-left:10px;
+   font-family: 'Times New Roman', Times, serif;
+   display: block;
+}
+.plot-div{
+   margin-left: -15px;
+}
+.movie-detail-section{
+   color:white;
+   font-size:35px;
+   padding-bottom:10px;
+   padding-left:10px;
+   font-family: 'Times New Roman', Times, serif;
+}
+.list-group-item{
+   background: rgb(3, 10, 25);
+}
 #btn_info:hover{
    background: transparent;
    border: none;
@@ -77,7 +102,7 @@
       text-align: center;
    }
    .head-text{
-      padding-left: 50px !important;
+      margin:0 auto;
    }
    #crew li:nth-last-of-type(5){
       display: none;
@@ -93,5 +118,8 @@
    }
    #btn_info{
       padding:7px 55px 7px 55px;
+   }
+   #movie_plot { 
+      width: 110%;
    }
 }

@@ -43,9 +43,9 @@
     border: 5px solid white;
 }
 .subject{
-    font-family: 'ethno';
+    font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 800;
     padding: 15px;
     opacity: 0.9;
