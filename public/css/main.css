@@ -740,13 +740,13 @@ footer h1{
           animation: none;
       }
       .copywrite-txt{
-        margin-bottom: 0px;
+        margin-bottom: -20px;
       }
       #footer .ixon{
         animation: none;
       }
       .icon-div{
-          padding-top: 0;
+          padding-top: 20px;
       }
     
   
