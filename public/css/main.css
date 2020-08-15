@@ -530,6 +530,7 @@ footer h1{
     text-align: center;
     background:linear-gradient(to bottom,rgb(3, 19, 33),rgb(42, 134, 130)) ;
     border-radius: 10px;
+    overflow: hidden;
 }
 .copywrite-txt{
     position: absolute;
