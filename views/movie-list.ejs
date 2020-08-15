@@ -62,7 +62,7 @@
           </div>
         </div>
         <div id="movie-container" class="col-md-8">
-          <h2 onclick="movielistSelected(28)" id="M-heading">Action</h2>
+          <h2 onclick="sessionStorage.setItem('genre-type','Action'),movielistSelected('movie',28)" id="M-heading">Action</h2>
           <ul class="list-group ul-main">
 
             <li id="action" class="">
@@ -71,7 +71,7 @@
               </div>
             </li>
 
-            <h2 onclick="movielistSelected(35)" id="c-heading">Comedy</h2>
+            <h2 onclick="sessionStorage.setItem('genre-type','Comedy'),movielistSelected('movie',35)" id="c-heading">Comedy</h2>
             <li id="comedy" class="">
               <div class="swiper-container s1">
                 <div id="movie-list-comedy" class="swiper-wrapper"></div>
@@ -81,20 +81,20 @@
           </ul>
         </div>
 
-        <h2 onclick="movielistSelected(16)" class="c-down" id="c-heading">Animation</h2>
+        <h2 onclick="sessionStorage.setItem('genre-type','Animation'),movielistSelected('movie',16)" class="c-down" id="c-heading">Animation</h2>
         <div class="containers">
           <div class="swiper-container s2">
             <div id="movie-list-animation" class="swiper-wrapper"></div>
           </div>
         </div>
 
-        <h2 onclick="movielistSelected(14)" class="c-down" id="c-heading">Fantasy</h2>
+        <h2 onclick="sessionStorage.setItem('genre-type','Fantasy'),movielistSelected('movie',14)" class="c-down" id="c-heading">Fantasy</h2>
         <div class="containers">
           <div class="swiper-container s2">
             <div id="movie-list-fantasy" class="swiper-wrapper"></div>
           </div>
         </div>
-        <h2 onclick="movielistSelected(12)" class="c-down" id="c-heading">Adventure</h2>
+        <h2 onclick="sessionStorage.setItem('genre-type','Adventure'),movielistSelected('movie',12)" class="c-down" id="c-heading">Adventure</h2>
         <div class="containers">
           <div class="swiper-container s2">
             <div id="movie-list-adventure" class="swiper-wrapper"></div>
