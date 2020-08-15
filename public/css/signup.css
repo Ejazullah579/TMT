@@ -1,8 +1,9 @@
 .m-container,.post-m-container{
     opacity: 0;
-    transform: translate(1600px);
+    transform: scale(0);
     height: 100vh !important;
     width: 100vw !important;
+    transition: delay 0.4s;
     position: fixed;    
     padding-left: 20% !important;
     padding-right:20% !important;

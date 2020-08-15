@@ -19,55 +19,56 @@ $(".select_img").change(function(){
 $('.login_btn').on('click', function () {
     $('#main-container').css({
         "opacity" : "1",
-        "transform": "translate(0px)",
-        "transition": "1s ease-in-out",
+        "transform": "scale(1)",
+        "transition": "0.8s ease-in-out",
     });
     
 })
 
+function hideloginform() {
+    $('#main-container').css({
+        "opacity" : "0",
+        "transform": "scale(0)",
+        "transition": ".8s ease-in-out"
+    });
+}
+
 function hidepostform() {
     $('.post-m-container').css({
         "opacity" : "0",
-        "transform": "translate(-1600px)",
-        "transition": "1s linear"
+        "transform": "scale(0)",
+        "transition": "1s ease-in-out"
     });
 }
 
 function showpostform() {
     $('.post-m-container').css({
         "opacity" : "1",
-        "transform": "translate(-0px)",
-        "transition": "1s linear"
+        "transform": "scale(1)",
+        "transition": "1s ease-in-out"
     });
     $('.pf_img').attr("src", "/images/demo.png");
     $('#Post-form').trigger("reset");
 }
 
-
-function hideloginform() {
-    $('#main-container').css({
-        "opacity" : "0",
-        "transform": "translate(-1600px)",
-        "transition": "1s linear"
-    });
-}
 function showsignupform() {
     $('#main-container').css({
         "opacity" : "0",
-        "transform": "translate(-1600px)",
-        "transition": "1s linear"
+        "transform": "scale(0)",
+        "transition": "1s ease-in-out"
     });
 
     $('.m-container').css({
         "opacity" : "1",
-        "transform": "translate(0px)",
+        "transform": "scale(1)",
+        "transition-delay":"0.8s",
         "transition": "0.8s ease-in-out"
     });
 }
 function hidesignupform() {
     $('.m-container').css({
         "opacity" : "0",
-        "transform": "translate(1600px)",
+        "transform": "scale(0)",
         "transition": "1s ease-in-out"
     });
     $('.pf_img').attr("src", "/images/demo.png");

@@ -1,5 +1,5 @@
 .main-container{
-    transform: translate(-1600px);
+    transform:scale(0);
     opacity: 0;
     height: 100vh !important;
     width: 100vw !important;
@@ -9,8 +9,8 @@
     padding-top: 7%;
     backdrop-filter: blur(15px);
     background: none !important;
-    z-index: 999999;
-    transition: transit 1s linear;    
+    transition: 0.8s ease-in-out;
+    z-index: 999999;  
 }
 @keyframes transit{
     0%{

@@ -56,6 +56,10 @@ section.beating-heart span{
     margin-top: -50px;
     animation: pulse 1s infinite;
 }
+.m-btn{
+    width: 50%;
+    text-align: center;
+}
 @keyframes pulse{
     0%{  
         transform: scale(1);
@@ -167,6 +171,10 @@ section.beating-heart span{
     }
     #sub-para{
         text-align: justify;
+    }
+    .m-btn{
+        width: 70%;
+        text-align: center;
     }
 }
 
