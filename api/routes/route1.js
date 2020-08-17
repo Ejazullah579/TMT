@@ -220,6 +220,7 @@ router.post('/get_info', async (req, res, next) => {
                     if (Admin[i].user_name == req_user_name && Admin[i].user_password == req_user_password) {
                         req.session.admin = true;
                         console.log("Admin Logged in");
+                        break;
                     }
                 }
                 /////////////// End/////////////

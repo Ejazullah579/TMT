@@ -17,11 +17,16 @@ $(".select_img").change(function(){
 
 
 $('.login_btn').on('click', function () {
-    $('#main-container').css({
-        "opacity" : "1",
-        "transform": "scale(1)",
-        "transition": "0.8s ease-in-out",
+    $('#main-container').css({ 
+        "display":"block"
     });
+    setTimeout(() => {
+        $('#main-container').css({
+            "opacity" : "1",
+            "transform": "scale(1)",
+            "transition": "0.8s ease-in-out",
+        }); 
+    },200);
     
 })
 
@@ -54,9 +59,14 @@ function showpostform() {
 function showsignupform() {
     $('#main-container').css({
         "opacity" : "0",
-        "transform": "scale(0)",
-        "transition": "1s ease-in-out"
+        "transform": "scale(2)",
+        "transition": "1s ease-in-out",
     });
+    setTimeout(() => {
+        $('#main-container').css({ 
+            "display":"none"
+        });
+    }, 1500);
 
     $('.m-container').css({
         "opacity" : "1",
